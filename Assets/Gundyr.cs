@@ -295,14 +295,14 @@ public class Gundyr : MonoBehaviour
     }
     */
 
-    private void ParingChecker()
+    private void ParryingChecker()
     {
         if(player.state == Player_Movement.State.Parry)
             {
                 anim.SetBool("Groggy", true);
                 enemyInfo.enemyState = EnemyInfo.State.Groggy;
                 Debug.Log("Parry Success");
-                //behaviorNum = 4;
+                //behaviorNum = 4;  
                 //StopCoroutine(enemyStateManager());
 
             }

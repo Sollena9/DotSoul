@@ -189,7 +189,7 @@ public class Player_Movement : PlayerInfo
 
             playerFreeze = false;
             rigid.velocity = new Vector2(0, 0);
-            yield return new WaitForSecondsRealtime(0.5f);
+            yield return new WaitForSecondsRealtime(0.3f);
 
             state = State.Idle;
         }
@@ -215,15 +215,13 @@ public class Player_Movement : PlayerInfo
     bool StateManager(State type)
     {
 
-
-
         if (type == State.Attack && (state != State.Attack && state != State.Parry && state != State.Estus && state != State.Estus_Walk && state != State.Dodge))
         {
             state = type;
             return true;
         }
 
-        else if (type == State.Parry && (state != State.Jump && state != State.Estus && state != State.Estus_Walk))
+        else if (type == State.Parry && (state != State.Jump && state != State.Estus && state != State.Estus_Walk && state != State.Attack))
         {
             state = type;
             return true;
