@@ -1,0 +1,1820 @@
+fileFormatVersion: 2
+guid: 4f4a6dc1c543f1b45ad0bc4646d84858
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5132654523434990444
+    second: iudex_gundyr
+  - first:
+      213: 8692915220531765087
+    second: iudex_gundyr_1
+  - first:
+      213: 4419438622373339049
+    second: iudex_gundyr_2
+  - first:
+      213: -8027973475678916320
+    second: iudex_gundyr_3
+  - first:
+      213: -5633423723006211810
+    second: iudex_gundyr_4
+  - first:
+      213: 5612896453394886698
+    second: iudex_gundyr_5
+  - first:
+      213: 4145824828292833523
+    second: iudex_gundyr_6
+  - first:
+      213: 4079173493766080964
+    second: iudex_gundyr_7
+  - first:
+      213: -1668714787083016587
+    second: iudex_gundyr_8
+  - first:
+      213: 361492764046276156
+    second: iudex_gundyr_9
+  - first:
+      213: -4444114356813696969
+    second: iudex_gundyr_10
+  - first:
+      213: -8699529605017079904
+    second: iudex_gundyr_11
+  - first:
+      213: 634430704596285078
+    second: iudex_gundyr_12
+  - first:
+      213: 6337262288914320664
+    second: iudex_gundyr_13
+  - first:
+      213: 163683016015922778
+    second: iudex_gundyr_14
+  - first:
+      213: 7743421943178033851
+    second: iudex_gundyr_15
+  - first:
+      213: -7569307320373456781
+    second: iudex_gundyr_16
+  - first:
+      213: 3343094287252047635
+    second: iudex_gundyr_17
+  - first:
+      213: 6975226020319273456
+    second: iudex_gundyr_18
+  - first:
+      213: -4734933685657184517
+    second: iudex_gundyr_19
+  - first:
+      213: 4835264887720884331
+    second: iudex_gundyr_20
+  - first:
+      213: 5037280057167975863
+    second: iudex_gundyr_21
+  - first:
+      213: -7511255136478530654
+    second: iudex_gundyr_22
+  - first:
+      213: -8071493223709720973
+    second: iudex_gundyr_23
+  - first:
+      213: -594400415770177250
+    second: iudex_gundyr_24
+  - first:
+      213: -404201056343825823
+    second: iudex_gundyr_25
+  - first:
+      213: -5105885183517191432
+    second: iudex_gundyr_26
+  - first:
+      213: 4411769992197103152
+    second: iudex_gundyr_27
+  - first:
+      213: -4883821487723554541
+    second: iudex_gundyr_28
+  - first:
+      213: 1512214880039521150
+    second: iudex_gundyr_29
+  - first:
+      213: -4741742099471579361
+    second: iudex_gundyr_30
+  - first:
+      213: 5855214619794839226
+    second: iudex_gundyr_31
+  - first:
+      213: 1449836863122733688
+    second: iudex_gundyr_32
+  - first:
+      213: 2594858008144087022
+    second: iudex_gundyr_33
+  - first:
+      213: -7229622457087048948
+    second: iudex_gundyr_34
+  - first:
+      213: 446408845207142246
+    second: iudex_gundyr_35
+  - first:
+      213: 8437308849335385108
+    second: iudex_gundyr_36
+  - first:
+      213: 4916417919083321635
+    second: iudex_gundyr_37
+  - first:
+      213: -2239137678840639641
+    second: iudex_gundyr_38
+  - first:
+      213: -6442596643285795963
+    second: iudex_gundyr_39
+  - first:
+      213: -7671432712013036032
+    second: iudex_gundyr_40
+  - first:
+      213: 938539910672462750
+    second: iudex_gundyr_41
+  - first:
+      213: -2371693705853182414
+    second: iudex_gundyr_42
+  - first:
+      213: -8394343005157665327
+    second: iudex_gundyr_43
+  - first:
+      213: 5500110866819633860
+    second: iudex_gundyr_44
+  - first:
+      213: 2501972609120337460
+    second: iudex_gundyr_45
+  - first:
+      213: -3740634461001343873
+    second: iudex_gundyr_46
+  - first:
+      213: -1938219520337827990
+    second: iudex_gundyr_47
+  - first:
+      213: 5889630859119944292
+    second: iudex_gundyr_48
+  - first:
+      213: 4873695655062123
+    second: iudex_gundyr_49
+  - first:
+      213: 8586248837714737804
+    second: iudex_gundyr_50
+  - first:
+      213: -7445110824174102592
+    second: iudex_gundyr_51
+  - first:
+      213: -7449761602614849147
+    second: iudex_gundyr_52
+  - first:
+      213: -7228851766812190472
+    second: iudex_gundyr_53
+  - first:
+      213: 8658514966828574369
+    second: iudex_gundyr_54
+  - first:
+      213: 7753976450918422682
+    second: iudex_gundyr_55
+  - first:
+      213: 4819349219750957701
+    second: iudex_gundyr_56
+  - first:
+      213: -1519139259559656087
+    second: iudex_gundyr_57
+  - first:
+      213: 7991609137089192718
+    second: iudex_gundyr_58
+  - first:
+      213: 7455571864320114426
+    second: iudex_gundyr_59
+  - first:
+      213: -2033016736231686828
+    second: iudex_gundyr_60
+  - first:
+      213: -4610186533873934885
+    second: iudex_gundyr_61
+  - first:
+      213: 2802854096139572747
+    second: iudex_gundyr_62
+  - first:
+      213: -5310102413539239014
+    second: iudex_gundyr_63
+  - first:
+      213: -5771527054238831725
+    second: iudex_gundyr_64
+  - first:
+      213: 7793277853755685865
+    second: iudex_gundyr_65
+  - first:
+      213: -1432431670821063349
+    second: iudex_gundyr_66
+  - first:
+      213: -5772676703922430857
+    second: iudex_gundyr_67
+  - first:
+      213: -100804847464768820
+    second: iudex_gundyr_68
+  - first:
+      213: -4281785209812557308
+    second: iudex_gundyr_69
+  - first:
+      213: -1740933435190905406
+    second: iudex_gundyr_70
+  - first:
+      213: -7941384915748548465
+    second: iudex_gundyr_71
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: iudex_gundyr
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4940bd7a7e525c8b0800000000000000
+      internalID: -5132654523434990444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fd166065073a870800000000000000
+      internalID: 8692915220531765087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_2
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af54390300055d30800000000000000
+      internalID: 4419438622373339049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_3
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02176eb68a8e69090800000000000000
+      internalID: -8027973475678916320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_4
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19c4f898fe02d1b0800000000000000
+      internalID: -5633423723006211810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_5
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20f6a1069305ed40800000000000000
+      internalID: 5612896453394886698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_6
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 1
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f0a36f37bde88930800000000000000
+      internalID: 4145824828292833523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 101
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9cd112ea22c9830800000000000000
+      internalID: 4079173493766080964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 101
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576a97c0eb887d8e0800000000000000
+      internalID: -1668714787083016587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_9
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 101
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c363adde0c7440500800000000000000
+      internalID: 361492764046276156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_10
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 101
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730f7e4d9855352c0800000000000000
+      internalID: -4444114356813696969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_11
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 101
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af66f39aef054780800000000000000
+      internalID: -8699529605017079904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_12
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 101
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 696ff0e4d53fdc800800000000000000
+      internalID: 634430704596285078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_13
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 101
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d873bb97a72f750800000000000000
+      internalID: 6337262288914320664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 201
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56c469f5d4854200800000000000000
+      internalID: 163683016015922778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_15
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 201
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba771d1b39267b60800000000000000
+      internalID: 7743421943178033851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_16
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 201
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3705065981b64f690800000000000000
+      internalID: -7569307320373456781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_17
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 201
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317cb42ba8e056e20800000000000000
+      internalID: 3343094287252047635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_18
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 201
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f12131fb1bfcc060800000000000000
+      internalID: 6975226020319273456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_19
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 201
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf65f5f46e22a4eb0800000000000000
+      internalID: -4734933685657184517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_20
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 201
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68b58b0ccf4a1340800000000000000
+      internalID: 4835264887720884331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 301
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b518a9f58308e540800000000000000
+      internalID: 5037280057167975863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_22
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 301
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a37edcef39a2c790800000000000000
+      internalID: -7511255136478530654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_23
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 301
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e3fc97dab4cff80800000000000000
+      internalID: -8071493223709720973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_24
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 301
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e119cab98f340c7f0800000000000000
+      internalID: -594400415770177250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_25
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 301
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162e9c2e74df36af0800000000000000
+      internalID: -404201056343825823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_26
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 301
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2178c4a704429b0800000000000000
+      internalID: -5105885183517191432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_27
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 301
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ed2afee61c93d30800000000000000
+      internalID: 4411769992197103152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_28
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 401
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31951d58b3e293cb0800000000000000
+      internalID: -4883821487723554541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_29
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 401
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7bc0dcdb677cf410800000000000000
+      internalID: 1512214880039521150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_30
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 401
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f174b70fea2f13eb0800000000000000
+      internalID: -4741742099471579361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_31
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 401
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab69b88aca6e14150800000000000000
+      internalID: 5855214619794839226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_32
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 401
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a72b802fade1410800000000000000
+      internalID: 1449836863122733688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_33
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 401
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee7810a3c99c20420800000000000000
+      internalID: 2594858008144087022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_34
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 401
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03c321fda83bab90800000000000000
+      internalID: -7229622457087048948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_35
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 501
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ff923ca76f13600800000000000000
+      internalID: 446408845207142246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_36
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 501
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c35e812b7571570800000000000000
+      internalID: 8437308849335385108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_37
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 501
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32993529c00aa3440800000000000000
+      internalID: 4916417919083321635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_38
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 501
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fc281052cfce0e0800000000000000
+      internalID: -2239137678840639641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_39
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 501
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b73ddbc7c4796a0800000000000000
+      internalID: -6442596643285795963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_40
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 501
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 006c62ae798998590800000000000000
+      internalID: -7671432712013036032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_41
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 501
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93b82f731d560d00800000000000000
+      internalID: 938539910672462750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_42
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 601
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e579ae32d061fd0800000000000000
+      internalID: -2371693705853182414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_43
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 601
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d5dace038d418b80800000000000000
+      internalID: -8394343005157665327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_44
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 601
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c2dc0a41b1545c40800000000000000
+      internalID: 5500110866819633860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_45
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 601
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43eff5cf4dac8b220800000000000000
+      internalID: 2501972609120337460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_46
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 601
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7c1e65c6c8961cc0800000000000000
+      internalID: -3740634461001343873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_47
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 601
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6729898d9f0a15e0800000000000000
+      internalID: -1938219520337827990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_48
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 601
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462e500df0c2cb150800000000000000
+      internalID: 5889630859119944292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_49
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 701
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a6342b990511000800000000000000
+      internalID: 4873695655062123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_50
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 701
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8af81573db782770800000000000000
+      internalID: 8586248837714737804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_51
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 701
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7dfabb627ada890800000000000000
+      internalID: -7445110824174102592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_52
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 701
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5811ccefa412d9890800000000000000
+      internalID: -7449761602614849147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_53
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 701
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f854314e95fdab90800000000000000
+      internalID: -7228851766812190472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_54
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 701
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a66830dc79392870800000000000000
+      internalID: 8658514966828574369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_55
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 701
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a989cb1ff78ab9b60800000000000000
+      internalID: 7753976450918422682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_56
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 801
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582dfc3d494c1e240800000000000000
+      internalID: 4819349219750957701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_57
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 801
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965c89564eeeaeae0800000000000000
+      internalID: -1519139259559656087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_58
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 801
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03a7f73b26e7ee60800000000000000
+      internalID: 7991609137089192718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_59
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 801
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afe723afb13877760800000000000000
+      internalID: 7455571864320114426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_60
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 801
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d7c7ebc0649c3e0800000000000000
+      internalID: -2033016736231686828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_61
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 801
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd9724f5c35500c0800000000000000
+      internalID: -4610186533873934885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_62
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 801
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06d5a543fcb5e620800000000000000
+      internalID: 2802854096139572747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_63
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 901
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b9c003df9be46b0800000000000000
+      internalID: -5310102413539239014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_64
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 901
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ba98819ba67efa0800000000000000
+      internalID: -5771527054238831725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_65
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 901
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebb60ddae8472c60800000000000000
+      internalID: 7793277853755685865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_66
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 901
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45f0b71cfafe1ce0800000000000000
+      internalID: -1432431670821063349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_67
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 901
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77cd78b6f1553efa0800000000000000
+      internalID: -5772676703922430857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_68
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 901
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cca993b768ed99ef0800000000000000
+      internalID: -100804847464768820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_69
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 901
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402e99c990b0494c0800000000000000
+      internalID: -4281785209812557308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_70
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1001
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c578d9b346f6d7e0800000000000000
+      internalID: -1740933435190905406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iudex_gundyr_71
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1001
+        width: 129
+        height: 98
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8099209e788ac190800000000000000
+      internalID: -7941384915748548465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

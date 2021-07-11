@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 94f65f8e63e3945449fc1ddfa1070221
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2716546368598005434
+    second: cleric_hollow
+  - first:
+      213: 655770359338068369
+    second: cleric_hollow_1
+  - first:
+      213: -5173022916550930454
+    second: cleric_hollow_2
+  - first:
+      213: 7525921982166729588
+    second: cleric_hollow_3
+  - first:
+      213: 1473475714862327408
+    second: cleric_hollow_4
+  - first:
+      213: 5592027296894584795
+    second: cleric_hollow_5
+  - first:
+      213: -7840229126612234634
+    second: cleric_hollow_6
+  - first:
+      213: -1674604679292844194
+    second: cleric_hollow_7
+  - first:
+      213: 7700618941443490359
+    second: cleric_hollow_8
+  - first:
+      213: 3513964054057699496
+    second: cleric_hollow_9
+  - first:
+      213: 7612273833524776080
+    second: cleric_hollow_10
+  - first:
+      213: -6095683573731489879
+    second: cleric_hollow_11
+  - first:
+      213: 9167272629283824604
+    second: cleric_hollow_12
+  - first:
+      213: -24792371364547972
+    second: cleric_hollow_13
+  - first:
+      213: 4141635934380605392
+    second: cleric_hollow_14
+  - first:
+      213: -160392352763677571
+    second: cleric_hollow_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cleric_hollow
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab65924878c13b520800000000000000
+      internalID: 2716546368598005434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199639adaa3c91900800000000000000
+      internalID: 655770359338068369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aefc604b01bb538b0800000000000000
+      internalID: -5173022916550930454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_3
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4730a523b22717860800000000000000
+      internalID: 7525921982166729588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_4
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076a8891b56d27410800000000000000
+      internalID: 1473475714862327408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 43
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd780bdd23fda9d40800000000000000
+      internalID: 5592027296894584795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 43
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e4b9e0629e13390800000000000000
+      internalID: -7840229126612234634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_7
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 43
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e570b87aaeb92c8e0800000000000000
+      internalID: -1674604679292844194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_8
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 43
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 732426ba0281eda60800000000000000
+      internalID: 7700618941443490359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 43
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a8c99b70bb14c030800000000000000
+      internalID: 3513964054057699496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 85
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09cce3458ba34a960800000000000000
+      internalID: 7612273833524776080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 85
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a70d840618c76ba0800000000000000
+      internalID: -6095683573731489879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_12
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 85
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3af93d2e1b83f70800000000000000
+      internalID: 9167272629283824604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 85
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c723da7387be7aff0800000000000000
+      internalID: -24792371364547972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_14
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 85
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dfbfb160fb0a7930800000000000000
+      internalID: 4141635934380605392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleric_hollow_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 47
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74f4d4410c26cdf0800000000000000
+      internalID: -160392352763677571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
