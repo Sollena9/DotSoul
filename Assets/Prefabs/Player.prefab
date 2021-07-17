@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7297142322356980762}
   - component: {fileID: 7297142322356980766}
   - component: {fileID: 7297142322356980767}
+  - component: {fileID: 5642854099696970974}
   m_Layer: 21
   m_Name: Player
   m_TagString: Player
@@ -198,6 +199,9 @@ MonoBehaviour:
   isGrounded: 0
   playerLayer: 0
   enemyLayer: 0
+  skillCoolTime:
+  - 5
+  - 5
   increaseStat:
   - 0
   - 0
@@ -212,3 +216,31 @@ MonoBehaviour:
   rigid: {fileID: 0}
   anim: {fileID: 0}
   moveVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &5642854099696970974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297142322356980760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4305bbf27c6e0a4b9a284a945f23c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillFilter: {fileID: 0}
+  coolTimeCounter: {fileID: 0}
+  coolTime: 0
+  skillFilter_test:
+  - {fileID: 2032837526020950362, guid: adbe9876be49b6e47a50a03fdb9c6058, type: 3}
+  - {fileID: 7096458314102165081, guid: 0e951daaf64ae324eaeae1fdc75178fd, type: 3}
+  coolTimeCounter_test:
+  - {fileID: 0}
+  - {fileID: 0}
+  cooltime_test:
+  - 0
+  - 0
+  currentCoolTime_test:
+  - 0
+  - 0
+  canUseSkill_test: 0000

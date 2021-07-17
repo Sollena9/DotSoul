@@ -21,8 +21,10 @@ public class Player_Movement : PlayerInfo
     public Rigidbody2D rigid;
     public Animator anim;
     public Vector3 moveVelocity = Vector3.zero;
-
+    
     bool isJumping;
+
+    private PlayerCooltimeManager cooltimeManager;
 
     private void OnEnable()
     {
@@ -33,14 +35,18 @@ public class Player_Movement : PlayerInfo
     private void Awake()
     {
         state = State.Idle;
+
     }
 
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        cooltimeManager = GetComponent<PlayerCooltimeManager>();
         isJumping = false;
         moveVelocity = Vector3.left;
+
+
     }
 
 
@@ -282,7 +288,7 @@ public class Player_Movement : PlayerInfo
 
 
         //짬푸
-        if (Input.GetButtonDown("Jump") && jumpcounter > 0 && isGrounded)
+        if (Input.GetButtonDown("Jump") && jumpcounter > 0 && isGrounded )
         {
             isJumping = true;
             StateManager(State.Jump);
@@ -293,11 +299,12 @@ public class Player_Movement : PlayerInfo
 
 
         //패링
-        if (Input.GetKey(KeyCode.Q) && StateManager(State.Parry))   //&& 쿨타임 체크)
+        if (Input.GetKey(KeyCode.Q) && StateManager(State.Parry) && cooltimeManager.canUseSkill[1])
         {
             Collider2D col = Physics2D.OverlapBox(pos.position, boxSize, 0);
             if (col.gameObject.tag == "Enemy")
-            {   
+            {
+                cooltimeManager.UseSkill(1);
                 Debug.Log("체크");
             }
 
@@ -311,8 +318,9 @@ public class Player_Movement : PlayerInfo
        
 
         // 구르기
-        if (Input.GetKeyDown(KeyCode.Z) && StateManager(State.Dodge))
+        if (Input.GetKeyDown(KeyCode.Z) && StateManager(State.Dodge) && cooltimeManager.canUseSkill[0])
         {
+            cooltimeManager.UseSkill(0);
             playerFreeze = true;
             Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
 

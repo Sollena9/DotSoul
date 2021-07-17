@@ -29,6 +29,9 @@ public class PlayerInfo : MonoBehaviour
     public LayerMask whatIsGrounded;
     public bool isGrounded;
     public int playerLayer, enemyLayer;
+   
+    public float[] skillCoolTime = new float[2];
+
 
 
     //레벨업 시 스탯 증가 계수- HP, FP, SP, AP, MP, DP 순서
