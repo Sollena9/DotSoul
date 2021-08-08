@@ -52,7 +52,7 @@ MonoBehaviour:
   enemyNum: 0
   behaviorNum: 0
   activeNum: 0
-  attkDamage: 1
+  attkDamage: 300
   enemyHp: 1
   moveSpeed: 3
   sightRange: 12
@@ -120,7 +120,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1984971745
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2716546368598005434, guid: 94f65f8e63e3945449fc1ddfa1070221,
     type: 3}

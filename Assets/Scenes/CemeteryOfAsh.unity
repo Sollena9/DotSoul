@@ -7870,11 +7870,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 1774124656244412677, guid: 7bc198c354e7c01459449be3245c87ea,
-        type: 3}
-      propertyPath: attkDamage
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 1774124656244412682, guid: 7bc198c354e7c01459449be3245c87ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9643,6 +9638,16 @@ PrefabInstance:
       propertyPath: attackCooltime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6473071329574880917, guid: 002ae3858eb97004cb50291c656acff8,
+        type: 3}
+      propertyPath: attackSize.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473071329574880917, guid: 002ae3858eb97004cb50291c656acff8,
+        type: 3}
+      propertyPath: attackSize.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6473071329574880918, guid: 002ae3858eb97004cb50291c656acff8,
         type: 3}
       propertyPath: m_Offset.x
@@ -9726,7 +9731,7 @@ PrefabInstance:
     - target: {fileID: 7249350616748534280, guid: 002ae3858eb97004cb50291c656acff8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.03
+      value: -2.33
       objectReference: {fileID: 0}
     - target: {fileID: 7249350616748534280, guid: 002ae3858eb97004cb50291c656acff8,
         type: 3}

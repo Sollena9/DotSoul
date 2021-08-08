@@ -19,9 +19,6 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0
-      value: {fileID: 5037280057167975863, guid: 4f4a6dc1c543f1b45ad0bc4646d84858,
-        type: 3}
     - time: 0.145
       value: {fileID: -7511255136478530654, guid: 4f4a6dc1c543f1b45ad0bc4646d84858,
         type: 3}
@@ -62,7 +59,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 5037280057167975863, guid: 4f4a6dc1c543f1b45ad0bc4646d84858, type: 3}
     - {fileID: -7511255136478530654, guid: 4f4a6dc1c543f1b45ad0bc4646d84858, type: 3}
     - {fileID: -8071493223709720973, guid: 4f4a6dc1c543f1b45ad0bc4646d84858, type: 3}
     - {fileID: -594400415770177250, guid: 4f4a6dc1c543f1b45ad0bc4646d84858, type: 3}
@@ -95,6 +91,20 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.5416667
+    functionName: ParryingChecker
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.55
+    functionName: DamageToPlayer
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.75
     functionName: Attack
     data: 
