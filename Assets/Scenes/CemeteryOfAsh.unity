@@ -9643,11 +9643,6 @@ PrefabInstance:
       propertyPath: attackCooltime
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6473071329574880917, guid: 002ae3858eb97004cb50291c656acff8,
-        type: 3}
-      propertyPath: attackCoolTime
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6473071329574880918, guid: 002ae3858eb97004cb50291c656acff8,
         type: 3}
       propertyPath: m_Offset.x

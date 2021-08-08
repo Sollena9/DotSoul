@@ -139,17 +139,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a836e4c3d422e974d9337b700bbdfd71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyState: 0
-  enemyLevel: 1
   enemyName: Gundyr
   enemyNum: 0
-  phaseLv: 0
+  phase: 0
   activeNum: 0
   attkDamage: 640000006400000096000000
   enemyHp: 1037
   moveSpeed: 3
   attackRange: 2
   dropSouls: 3000
+  attackCoolTime: 10
   attackCount: 1
   gundyrSkillScript: {fileID: 11400000, guid: 69bf4871315b816418ce94aa8a3e18f6, type: 2}
   attackPos: {fileID: 7249350616748534280}

@@ -23,8 +23,8 @@ public class Gundyr : MonoBehaviour
         private int dropSouls;
 
         public float attackCoolTime;
-        public float curruntCoolTime;
-        public bool canUseSkill = true;
+        private float curruntCoolTime;
+        private bool canUseSkill = true;
         public int attackCount = 1;
         private int attackNum;
         [SerializeField]
@@ -111,7 +111,7 @@ public class Gundyr : MonoBehaviour
                  2순위: 점프공격
                  3순위: 공격
                  4순위: 추격
-                 5순위: 아이들 -> 사실상 없음
+                 5순위: 아이들 -> 사실상 없음s
                 */
 
                 /*        if (swordInHeart)
@@ -204,7 +204,7 @@ public class Gundyr : MonoBehaviour
                 case 3:
                     anim.SetInteger("Attack", gundyrSkillScript.skillArr[attackNum].skillOrder[2]);
       //              Debug.Log(gundyrSkillScript.skillArr[attackNum].skillOrder[2]);
-      /*
+      
                     if (gundyrSkillScript.skillArr[attackNum].skillOrder[2] == 0)
                         {
                             attackCount = 1;
@@ -214,7 +214,7 @@ public class Gundyr : MonoBehaviour
                         }
 
                     else
-                        attackCount++;*/
+                        attackCount++;
                     break;
 
                 default:
@@ -259,19 +259,6 @@ public class Gundyr : MonoBehaviour
 
         }
 
-        /*private void CoolTimeCalculator()
-        {
-            for(int i = 0; i < 2; i++)
-            { 
-                if (attackCooltime[i] > 0)
-                {
-                    attackCooltime[i] -= Time.deltaTime;
-                }
-                else if (attackCooltime[i] < 0)
-                    attackCooltime[i] = 0;
-            }
-        }
-        */
 
         private void ParryingChecker()
         {
