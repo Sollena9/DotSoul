@@ -44,7 +44,6 @@ public class PlayerCooltimeManager : MonoBehaviour
     {
         if (canUseSkill[num])
         {
-            Debug.Log("Use Skill: "+ num);
             skillFilter[num].fillAmount = 1; //스킬 버튼을 가림
             coolTimeCounter[num].gameObject.SetActive(true);
             StartCoroutine("Cooltime",num);

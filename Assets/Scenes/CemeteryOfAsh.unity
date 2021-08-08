@@ -8499,6 +8499,10 @@ MonoBehaviour:
   hp: {fileID: 2067362424}
   mp: {fileID: 194827343}
   sp: {fileID: 1185109963}
+  curruntValue:
+  - 0
+  - 0
+  - 0
 --- !u!1 &1610199222
 GameObject:
   m_ObjectHideFlags: 0
@@ -9634,6 +9638,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6473071329574880917, guid: 002ae3858eb97004cb50291c656acff8,
+        type: 3}
+      propertyPath: attackCooltime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473071329574880917, guid: 002ae3858eb97004cb50291c656acff8,
+        type: 3}
+      propertyPath: attackCoolTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6473071329574880918, guid: 002ae3858eb97004cb50291c656acff8,
         type: 3}
       propertyPath: m_Offset.x
