@@ -33,7 +33,7 @@ public class Player_Movement : PlayerInfo
     }
 
     private void Awake()
-    {
+    {   
         state = State.Idle;
 
     }
@@ -46,6 +46,9 @@ public class Player_Movement : PlayerInfo
         isJumping = false;
         moveVelocity = Vector3.left;
 
+        var slide = FindObjectOfType<SliderManager>();
+        slide.hp.maxValue = base.HP;
+        slide.hp.value = base.HP;
 
     }
 

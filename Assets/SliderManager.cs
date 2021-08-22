@@ -64,7 +64,7 @@ public class SliderManager : MonoBehaviour
     }
 
    
-    IEnumerator SliderAniamtion(int value, float point)
+    public IEnumerator SliderAniamtion(int value, float point)
     {
         switch(value)
         {

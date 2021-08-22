@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RotaryHeart.Lib.SerializableDictionary;
+using RotaryHeart.Lib;
 
 
-namespace RotaryHeart.Lib {
 public class Gundyr : MonoBehaviour
-    {
+{
 
-        public string enemyName;
-        public int enemyNum;
+    public string enemyName;
+    public int enemyNum;
         public int phase;
 
         public int activeNum;
-        public int[] attkDamage = new int[3];
+        public float[] attkDamage = new float[3];
         public int enemyHp;
         public float moveSpeed;
 
@@ -23,8 +23,8 @@ public class Gundyr : MonoBehaviour
         private int dropSouls;
 
         public float attackCoolTime;
-        public float curruntCoolTime;
-        public bool canUseSkill = true;
+        private float curruntCoolTime;
+        private bool canUseSkill = true;
         public int attackCount = 1;
         private int attackNum;
         [SerializeField]
@@ -111,13 +111,13 @@ public class Gundyr : MonoBehaviour
                  2순위: 점프공격
                  3순위: 공격
                  4순위: 추격
-                 5순위: 아이들 -> 사실상 없음
+                 5순위: 아이들 -> 사실상 없음s
                 */
 
                 /*        if (swordInHeart)
                         {
                             yield return new WaitForSeconds(2f);
-                           // anim.SetBool("SwordInHeart", false);
+                           // anim.SetBool("SwordInHeart", falsse);
                         }
 
 
@@ -152,7 +152,7 @@ public class Gundyr : MonoBehaviour
             if(enemyInfo.enemyState != EnemyInfo.State.Skill && enemyInfo.enemyState != EnemyInfo.State.Attack)
                 enemyInfo.enemyState = EnemyInfo.State.Follow;
             
-            }
+        }
 
         IEnumerator PhaseSelector()
         {
@@ -178,7 +178,7 @@ public class Gundyr : MonoBehaviour
 
                 case 1:
                     anim.SetInteger("Attack", gundyrSkillScript.skillArr[attackNum].skillOrder[0]);
-    //                Debug.Log(gundyrSkillScript.skillArr[attackNum].skillOrder[0]);
+    //                Debug.Log(gundyrSkillScript.skillArr[attackNum].skillOrder[0]);   
                     if (gundyrSkillScript.skillArr[attackNum].skillOrder[0] == 0)
                         attackCount = 1;
                     else
@@ -204,7 +204,7 @@ public class Gundyr : MonoBehaviour
                 case 3:
                     anim.SetInteger("Attack", gundyrSkillScript.skillArr[attackNum].skillOrder[2]);
       //              Debug.Log(gundyrSkillScript.skillArr[attackNum].skillOrder[2]);
-      /*
+      
                     if (gundyrSkillScript.skillArr[attackNum].skillOrder[2] == 0)
                         {
                             attackCount = 1;
@@ -214,7 +214,7 @@ public class Gundyr : MonoBehaviour
                         }
 
                     else
-                        attackCount++;*/
+                        attackCount++;
                     break;
 
                 default:
@@ -259,19 +259,6 @@ public class Gundyr : MonoBehaviour
 
         }
 
-        /*private void CoolTimeCalculator()
-        {
-            for(int i = 0; i < 2; i++)
-            { 
-                if (attackCooltime[i] > 0)
-                {
-                    attackCooltime[i] -= Time.deltaTime;
-                }
-                else if (attackCooltime[i] < 0)
-                    attackCooltime[i] = 0;
-            }
-        }
-        */
 
         private void ParryingChecker()
         {
@@ -286,12 +273,25 @@ public class Gundyr : MonoBehaviour
                 }
         }
 
+        public void DamageToPlayer()
+        {
+            Collider2D col = Physics2D.OverlapBox(attackPos.position, attackSize, 0);
+            
+            //공격
+            if (col.gameObject.CompareTag("Player"))    
+            {
+                SliderManager slide = FindObjectOfType<SliderManager>();
+                slide.ResourceManager(1, attkDamage[attackCount -1]);
+                slide.StartCoroutine(slide.SliderAniamtion(1, attkDamage[attackCount -1]));
+            }
+            
+        }
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.green;
             Gizmos.DrawWireCube(attackPos.position, attackSize);
         }
 
-        }
+        
 }
