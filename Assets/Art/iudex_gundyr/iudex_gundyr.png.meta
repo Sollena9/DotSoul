@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f4a6dc1c543f1b45ad0bc4646d84858
+guid: 3b4dbd1b8d3174014bbcf96cffe55d17
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -194,30 +194,6 @@ TextureImporter:
   - first:
       213: -5310102413539239014
     second: iudex_gundyr_63
-  - first:
-      213: -5771527054238831725
-    second: iudex_gundyr_64
-  - first:
-      213: 7793277853755685865
-    second: iudex_gundyr_65
-  - first:
-      213: -1432431670821063349
-    second: iudex_gundyr_66
-  - first:
-      213: -5772676703922430857
-    second: iudex_gundyr_67
-  - first:
-      213: -100804847464768820
-    second: iudex_gundyr_68
-  - first:
-      213: -4281785209812557308
-    second: iudex_gundyr_69
-  - first:
-      213: -1740933435190905406
-    second: iudex_gundyr_70
-  - first:
-      213: -7941384915748548465
-    second: iudex_gundyr_71
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -261,7 +237,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1630,174 +1606,6 @@ TextureImporter:
       bones: []
       spriteID: a9b9c003df9be46b0800000000000000
       internalID: -5310102413539239014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_64
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 901
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 39ba98819ba67efa0800000000000000
-      internalID: -5771527054238831725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_65
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 901
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ebb60ddae8472c60800000000000000
-      internalID: 7793277853755685865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_66
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 901
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b45f0b71cfafe1ce0800000000000000
-      internalID: -1432431670821063349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_67
-      rect:
-        serializedVersion: 2
-        x: 525
-        y: 901
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77cd78b6f1553efa0800000000000000
-      internalID: -5772676703922430857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_68
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 901
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cca993b768ed99ef0800000000000000
-      internalID: -100804847464768820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_69
-      rect:
-        serializedVersion: 2
-        x: 787
-        y: 901
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 402e99c990b0494c0800000000000000
-      internalID: -4281785209812557308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_70
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1001
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c578d9b346f6d7e0800000000000000
-      internalID: -1740933435190905406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: iudex_gundyr_71
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 1001
-        width: 129
-        height: 98
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f8099209e788ac190800000000000000
-      internalID: -7941384915748548465
       vertices: []
       indices: 
       edges: []
