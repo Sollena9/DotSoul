@@ -26,11 +26,6 @@ public class Player_Movement : PlayerInfo
 
     private PlayerCooltimeManager cooltimeManager;
 
-    private void OnEnable()
-    {
-        playerLayer = LayerMask.NameToLayer("Player");
-        enemyLayer = LayerMask.NameToLayer("Enemy");
-    }
 
     private void Awake()
     {   
@@ -80,11 +75,6 @@ public class Player_Movement : PlayerInfo
 
 
     }
-
-    /*public void StateIdle()
-    {
-        state = State.Idle;
-    }*/
 
     private void Walk()
     {
@@ -325,7 +315,7 @@ public class Player_Movement : PlayerInfo
         {
             cooltimeManager.UseSkill(0);
             playerFreeze = true;
-            Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+            Physics2D.IgnoreLayerCollision(15, 16, true);
 
             anim.SetTrigger("Roll");
             rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
@@ -382,7 +372,7 @@ public class Player_Movement : PlayerInfo
 
     private void ExitRoll()
     {
-        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+        Physics2D.IgnoreLayerCollision(15, 16, false);
     }
 
     private void OnDrawGizmos()

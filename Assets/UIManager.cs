@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
 
-    public Vector3[] bonfireSelect = new Vector3[3];
+    public GameObject[] bonfireSelect = new GameObject[3];
     public GameObject bonfire;
     public GameObject bonfireUI;
     public bool bonfireUITrigger;
@@ -22,16 +22,19 @@ public class UIManager : MonoBehaviour
         switch (selNum)
         {
             case 0:
-                fire.gameObject.transform.position = bonfireSelect[0];
+                fire.gameObject.transform.position = new Vector3(bonfireSelect[0].transform.position.x + 27f,
+                    bonfireSelect[0].transform.position.y, bonfireSelect[0].transform.position.z);
             break;
 
             case 1:
-                fire.gameObject.transform.position = bonfireSelect[1];
-            break;
+                fire.gameObject.transform.position = new Vector3(bonfireSelect[1].transform.position.x + 27f,
+                    bonfireSelect[1].transform.position.y, bonfireSelect[1].transform.position.z);
+                break;
 
             case 2:
-                fire.gameObject.transform.position = bonfireSelect[2];
-            break;
+                fire.gameObject.transform.position = new Vector3(bonfireSelect[2].transform.position.x + 27f,
+                     bonfireSelect[2].transform.position.y, bonfireSelect[2].transform.position.z);
+                break;
 
         }
 

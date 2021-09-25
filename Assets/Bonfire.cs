@@ -88,6 +88,10 @@ public class Bonfire : MonoBehaviour
 
         ui.bonfire = this.gameObject;
 
+
+        selectNum = 0;
+        UIManager game = FindObjectOfType<UIManager>();
+        game.MoveBonfireSeletor();
         ui.ShowBonFireUI(1);
     }
 

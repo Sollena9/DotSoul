@@ -142,7 +142,7 @@ public class SystemManager : MonoBehaviour
     private void StartGame()
     {
         FullRecovery();
-
+        thePlayer.transform.position = startPosition;
 
 
     }

@@ -188,6 +188,7 @@ MonoBehaviour:
   jumpPower: 13
   jumpcounter: 0
   dodgePower: 40
+  estusCount: 4
   AP: 50
   MP: 50
   Soul: 100000
@@ -228,19 +229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4305bbf27c6e0a4b9a284a945f23c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillFilter: {fileID: 0}
-  coolTimeCounter: {fileID: 0}
-  coolTime: 0
-  skillFilter_test:
-  - {fileID: 2032837526020950362, guid: adbe9876be49b6e47a50a03fdb9c6058, type: 3}
-  - {fileID: 7096458314102165081, guid: 0e951daaf64ae324eaeae1fdc75178fd, type: 3}
-  coolTimeCounter_test:
+  skillFilter:
   - {fileID: 0}
+  coolTimeCounter:
   - {fileID: 0}
-  cooltime_test:
+  coolTime: []
+  currentCoolTime:
   - 0
   - 0
-  currentCoolTime_test:
-  - 0
-  - 0
-  canUseSkill_test: 0000
+  canUseSkill: 0000

@@ -94,13 +94,13 @@ SpriteRenderer:
   m_SortingLayerID: 903990115
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5132654523434990444, guid: 4f4a6dc1c543f1b45ad0bc4646d84858,
+  m_Sprite: {fileID: -5132654523434990444, guid: 3b4dbd1b8d3174014bbcf96cffe55d17,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 8.0625, y: 6.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
   enemyNum: 0
   phase: 0
   activeNum: 0
-  attkDamage: 640000006400000096000000
+  attkDamage: []
   enemyHp: 1037
   moveSpeed: 3
   attackRange: 2
@@ -152,11 +152,64 @@ MonoBehaviour:
   attackCount: 1
   gundyrSkillScript: {fileID: 11400000, guid: 69bf4871315b816418ce94aa8a3e18f6, type: 2}
   attackPos: {fileID: 7249350616748534280}
-  attackSize: {x: 0, y: 0}
+  attackSize: {x: 2.5, y: 3}
   playerDistance: 0
   firstTry: 0
   swordInHeart: 0
   death: 0
+  ease:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.04759367
+      outSlope: 0.04759367
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.13701373
+      value: 0.0065209866
+      inSlope: 0.09753926
+      outSlope: 0.09753926
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.399996
+      outWeight: 0.4163376
+    - serializedVersion: 3
+      time: 0.4569181
+      value: 0.8109815
+      inSlope: 2.838281
+      outSlope: 2.838281
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.44520006
+      outWeight: 0.033294987
+    - serializedVersion: 3
+      time: 0.52223563
+      value: 0.9027844
+      inSlope: 0.5657527
+      outSlope: 0.6749419
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.25045544
+    - serializedVersion: 3
+      time: 1.0078942
+      value: 1.0003144
+      inSlope: -0.057823397
+      outSlope: -0.057823397
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.47471458
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  playerLayer: 0
+  enemyLayer: 0
 --- !u!61 &6473071329574880918
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,18 +223,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.60998523, y: 1.8505325}
+  m_Offset: {x: 0.04206559, y: 1.8505325}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.6, y: 0}
-    oldSize: {x: 6.45, y: 4.9}
-    newSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 8.0625, y: 6.125}
+    newSize: {x: 8.0625, y: 6.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7804592, y: 3.701065}
+  m_Size: {x: 1.5264096, y: 3.701065}
   m_EdgeRadius: 0
 --- !u!1 &7260655841085576405
 GameObject:

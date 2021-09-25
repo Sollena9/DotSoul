@@ -17,6 +17,11 @@ public class PlayerInfo : MonoBehaviour
     public int jumpcounter;
     public float dodgePower;
 
+    public int estusMaxCount; // 최대 소유 가능한 에스트 HP+MP = 최대 개ㅅ
+    public int estusHPCurruntCount;
+    public int estusMPCurruntCount;
+
+ 
     public float AP; //공격 데미지 계수
     public float MP; //마법 데미지
 
@@ -28,7 +33,6 @@ public class PlayerInfo : MonoBehaviour
 
     public LayerMask whatIsGrounded;
     public bool isGrounded;
-    public int playerLayer, enemyLayer;
    
     public float[] skillCoolTime = new float[2];
 
@@ -48,18 +52,30 @@ public class PlayerInfo : MonoBehaviour
         Soul -= levNeedSoul;
 
         Level++;
-        HP += increaseStat[0];
-        FP += increaseStat[1];
-        SP += increaseStat[2];
-        AP += increaseStat[3];
-        MP += increaseStat[4];
-        DP += increaseStat[5];
+        HP += RandomAblityPointCalculator();
+        FP += RandomAblityPointCalculator();
+        SP += RandomAblityPointCalculator();
+        AP += RandomAblityPointCalculator();
+        MP += RandomAblityPointCalculator();
+        DP += RandomAblityPointCalculator();
 
         //이펙트 출력
 
     }
 
-     
+
+
+    private float RandomAblityPointCalculator()
+    {
+        var ablity = Random.Range(Level / 100 * 2 + 3, Level / 100 * 2 - 3);
+
+        return ablity; 
+    }
+
+    // 5일때 100/현재레벨 * 2 = 40
+    // 50일때 100/현재레벨 * 2 = 4
+    // 80일때 100/현재레벨 * 2 = 2
+
 
 
 
