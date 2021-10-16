@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &23452564993746181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8029445259253904294}
+  m_Layer: 21
+  m_Name: AttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8029445259253904294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23452564993746181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7297142322356980765}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7297142322187281440
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,7 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7297142322356980765}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7297142322356980760
 GameObject:
@@ -44,6 +74,7 @@ GameObject:
   - component: {fileID: 7297142322356980766}
   - component: {fileID: 7297142322356980767}
   - component: {fileID: 5642854099696970974}
+  - component: {fileID: 5493479822766243777}
   m_Layer: 21
   m_Name: Player
   m_TagString: Player
@@ -62,6 +93,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8029445259253904294}
   - {fileID: 7297142322187281441}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -149,7 +181,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.092669606, y: 0.8948984}
+  m_Offset: {x: 0.07590997, y: 0.9118453}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.33, y: 0}
@@ -160,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3651378, y: 1.7081761}
+  m_Size: {x: 1.3316185, y: 1.6742823}
   m_EdgeRadius: 0
 --- !u!114 &7297142322356980767
 MonoBehaviour:
@@ -188,7 +220,9 @@ MonoBehaviour:
   jumpPower: 13
   jumpcounter: 0
   dodgePower: 40
-  estusCount: 4
+  estusMaxCount: 0
+  estusHPCurruntCount: 0
+  estusMPCurruntCount: 0
   AP: 50
   MP: 50
   Soul: 100000
@@ -198,8 +232,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   isGrounded: 0
-  playerLayer: 0
-  enemyLayer: 0
   skillCoolTime:
   - 5
   - 5
@@ -238,3 +270,18 @@ MonoBehaviour:
   - 0
   - 0
   canUseSkill: 0000
+--- !u!114 &5493479822766243777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297142322356980760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4322d99fa3645a4e802423d3f1bd6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPos: {fileID: 23452564993746181}
+  leftHands: {fileID: 0}
+  rightHands: {fileID: 0}
