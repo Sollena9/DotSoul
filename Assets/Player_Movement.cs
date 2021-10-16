@@ -26,6 +26,7 @@ public class Player_Movement : PlayerInfo
 
     private PlayerCooltimeManager cooltimeManager;
 
+    public GameObject attAngle; 
 
     private void Awake()
     {   

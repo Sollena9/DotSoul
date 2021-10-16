@@ -143,7 +143,11 @@ MonoBehaviour:
   enemyNum: 0
   phase: 0
   activeNum: 0
-  attkDamage: []
+  attkDamage:
+  - 0
+  - 0
+  - 0
+  - 0
   enemyHp: 1037
   moveSpeed: 3
   attackRange: 2
