@@ -83,13 +83,13 @@ public class Player_Movement : PlayerInfo
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             moveVelocity = Vector3.left;
-            transform.localScale = new Vector3(-1, 1, 1);
+            //transform.localScale = new Vector3(-1, 1, 1);
             anim.SetInteger("MoveSpeed", -1);
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
             moveVelocity = Vector3.right;
-            transform.localScale = new Vector3(1, 1, 1);
+           // transform.localScale = new Vector3(1, 1, 1);
             anim.SetInteger("MoveSpeed", 1);
 
         }
