@@ -7,6 +7,13 @@ public class PlayerAttackManager : MonoBehaviour
     public GameObject attAngle;
     public GameObject weapon;
     public GameObject shield;
+    private Player_Movement thePlayer;
+
+
+    private void Start()
+    {
+        thePlayer = GetComponent<Player_Movement>();    
+    }
 
     private void FixedUpdate()
     {
@@ -42,6 +49,8 @@ public class PlayerAttackManager : MonoBehaviour
         //라디안 값(180도가 파이(3.141592654...)로)으로 출력되므로
         //라디안 값을 각도로 변화하기 위해 Rad2Deg를 곱해주어야 각도가 됩니다.
         float rotateDegree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        if (!thePlayer.isRightFace)
+            rotateDegree += 180f;
 
         //구해진 각도를 오일러 회전 함수에 적용하여 z축을 기준으로 게임 오브젝트를 회전시킵니다.
         attAngle.transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);

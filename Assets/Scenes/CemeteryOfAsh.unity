@@ -10193,6 +10193,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7297142322356980764, guid: 6f70e3b09b7474b4c989294aff06ad4f,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7297142322356980765, guid: 6f70e3b09b7474b4c989294aff06ad4f,
         type: 3}
       propertyPath: m_LocalPosition.x

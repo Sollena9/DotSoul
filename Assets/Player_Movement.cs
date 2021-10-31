@@ -11,7 +11,6 @@ public class Player_Movement : PlayerInfo
 
     };
 
-
     public State state;
     public Transform pos;
     public Vector2 boxSize;
@@ -25,8 +24,8 @@ public class Player_Movement : PlayerInfo
     bool isJumping;
 
     private PlayerCooltimeManager cooltimeManager;
-
-    public GameObject attAngle; 
+    public GameObject attAngle;
+    public bool isRightFace;
 
     private void Awake()
     {   
@@ -41,6 +40,8 @@ public class Player_Movement : PlayerInfo
         cooltimeManager = GetComponent<PlayerCooltimeManager>();
         isJumping = false;
         moveVelocity = Vector3.left;
+
+        StartCoroutine(LookChange());
 
         var slide = FindObjectOfType<SliderManager>();
         slide.hp.maxValue = base.HP;
@@ -83,13 +84,11 @@ public class Player_Movement : PlayerInfo
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             moveVelocity = Vector3.left;
-            //transform.localScale = new Vector3(-1, 1, 1);
             anim.SetInteger("MoveSpeed", -1);
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
             moveVelocity = Vector3.right;
-           // transform.localScale = new Vector3(1, 1, 1);
             anim.SetInteger("MoveSpeed", 1);
 
         }
@@ -369,6 +368,25 @@ public class Player_Movement : PlayerInfo
         anim.SetBool("Estus_Walk", false);
         anim.SetBool("Estus", false);
 
+    }
+
+    IEnumerator LookChange()
+    {
+        if (Input.mousePosition.x < 960)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            isRightFace = false;
+        }
+
+        else
+        { 
+            transform.localScale = new Vector3(1, 1, 1);
+            isRightFace = true;
+        }
+
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        StartCoroutine(LookChange());
     }
 
     private void ExitRoll()
