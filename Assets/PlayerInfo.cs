@@ -36,6 +36,9 @@ public class PlayerInfo : MonoBehaviour
    
     public float[] skillCoolTime = new float[2];
 
+    public bool eqipWeapon;
+    public bool eqipShield;
+
 
 
     //레벨업 시 스탯 증가 계수- HP, FP, SP, AP, MP, DP 순서

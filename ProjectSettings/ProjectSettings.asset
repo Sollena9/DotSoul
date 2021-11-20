@@ -507,7 +507,7 @@ PlayerSettings:
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
     1: RH_SerializedDictionary
-    7: RH_SerializedDictionary
+    7: RH_SerializedDictionary;ODIN_INSPECTOR;ODIN_INSPECTOR_3
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

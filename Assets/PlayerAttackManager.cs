@@ -8,11 +8,17 @@ public class PlayerAttackManager : MonoBehaviour
     public GameObject weapon;
     public GameObject shield;
     private Player_Movement thePlayer;
+    public GameObject[] weponlist;
 
 
     private void Start()
     {
-        thePlayer = GetComponent<Player_Movement>();    
+        thePlayer = GetComponent<Player_Movement>();
+
+
+        if (GetComponent<PlayerInfo>().eqipWeapon)
+            EqipWeapon(0);
+
     }
 
     private void FixedUpdate()
@@ -62,7 +68,16 @@ public class PlayerAttackManager : MonoBehaviour
     //
     // 무기 아이템 습득 방식: 드롭 / 구매(재료 사용)
     //인벤토리 만들어야됨
-    
+
+
+    void EqipWeapon(int weaponNum)
+    {
+
+            GameObject normalWeapon = Instantiate(weponlist[weaponNum], transform.localPosition, Quaternion.identity);
+            //normalWeapon.transform.position = normalWeapon.GetComponent<weaponInfo>().spawnPosition;
+
+
+    }
 
 
 }
