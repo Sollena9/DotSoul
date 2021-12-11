@@ -17,4 +17,17 @@ public class GameManager : MonoBehaviour
     }
 
 
+
+
+
+    public bool GetItems(List<int> itemNum, List<int> itemCount)
+    {
+        for(int i = 0; i < itemNum.Count; i++)
+        {
+            Debug.Log(itemNum[i] + " // " + itemCount);
+        }
+
+        return false;
+
+    }
 }

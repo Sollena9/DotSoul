@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -10,32 +10,40 @@ using Sirenix.OdinInspector.Editor.Examples;
 
 [CreateAssetMenu(fileName = "PlayerWeapon", menuName = "DotSoul/PlayerWeapon")]
 [InlineEditor]
-public class EnemyData : SerializedScriptableObject
+public class WeaponData : SerializedScriptableObject
 {
 
+    [HorizontalGroup("Basic Info", 150)]
+    [PreviewField(150)]
+    [HideLabel]
+    [PropertyTooltip("이미지")]
+    [OnInspectorInit("@Texture = EditorIcons.OdinInspectorLogo")]
+    //[OnInspectorGUI("DrawPreview", append: true)] //프리뷰 설명임
+    public Texture2D Texture;
 
-    [BoxGroup("Basic Info")]
-    [LabelWidth(100)]
+    /*private void DrawPreview()
+    {
+        if (this.Texture == null) return;
+
+        GUILayout.BeginVertical(GUI.skin.box);
+        GUILayout.Label(this.Texture);
+        GUILayout.EndVertical();
+    }*/
+    
+    [HorizontalGroup("Basic Info")]
     [PropertyTooltip("무기 이름")]
-    public string enemyName;
+    public string weaponName;
 
-    [LabelWidth(100)]
-    [TextArea]
-    [BoxGroup("Basic Info")]
-    [PropertyTooltip("무기 설명")]
-    public string description;
-
-    [BoxGroup("Basic Info")]
+    [VerticalGroup("Basic Info")]
     [LabelWidth(100)]
     [PropertyTooltip("무기 번호")]
     public int weaponNum;
 
-
-    [HorizontalGroup("Game Data", 150)]
-    [PreviewField(100)]
-    [HideLabel]
-    [PropertyTooltip("게임오브젝트 0: 본체 / 1: AttPosition / 2: 체력바 / 3: 히트 이펙트")]
-    public GameObject weaponDropItem;
+    [LabelWidth(100)]
+    [TextArea]
+    [VerticalGroup("Basic Info")]
+    [PropertyTooltip("무기 설명")]
+    public string description;
 
 
     [VerticalGroup("Game Data/Stats")]

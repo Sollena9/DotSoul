@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -7,32 +7,32 @@ using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities.Editor;
 
 
-public class EnemyDataEditor : OdinMenuEditorWindow
+public class WeaponDataEditor : OdinMenuEditorWindow
 {
 
-    [MenuItem("Tools/EnemyData")]
+    [MenuItem("Tools/WeaponData")]
     private static void OpenWindow()
     {
-        GetWindow<EnemyDataEditor>().Show();
+        GetWindow<WeaponDataEditor>().Show();
     }
 
     protected override void OnDestroy()
     {
         base.OnDestroy();
 
-        if (createNewEnemyData != null)
-            DestroyImmediate(createNewEnemyData.enemyData);
+        if (createNewWeaponData != null)
+            DestroyImmediate(createNewWeaponData.weaponData);
     }
 
-    private CreateNewEnemyData createNewEnemyData;
+    private CreateNewWeaponData createNewWeaponData;
 
     protected override OdinMenuTree BuildMenuTree()
     {
         var tree = new OdinMenuTree();
 
-        createNewEnemyData = new CreateNewEnemyData();
-        tree.Add("Create New", createNewEnemyData);
-        tree.AddAllAssetsAtPath("Enemy Data", "Assets/04_Data/", typeof(EnemyData));
+        createNewWeaponData = new CreateNewWeaponData();
+        tree.Add("Create New", createNewWeaponData);
+        tree.AddAllAssetsAtPath("Weapon Data", "Assets/04_Data/", typeof(WeaponData));
 
         return tree;
     }
@@ -48,7 +48,7 @@ public class EnemyDataEditor : OdinMenuEditorWindow
 
             if(SirenixEditorGUI.ToolbarButton("Delete Currunt"))
             {
-                EnemyData asset = seleted.SelectedValue as EnemyData;
+                WeaponData asset = seleted.SelectedValue as WeaponData;
                 string path = AssetDatabase.GetAssetPath(asset);
                 AssetDatabase.DeleteAsset(path);
                 AssetDatabase.SaveAssets();
@@ -59,28 +59,28 @@ public class EnemyDataEditor : OdinMenuEditorWindow
 
     }
 
-    public class CreateNewEnemyData
+    public class CreateNewWeaponData
     {
-        public CreateNewEnemyData()
+        public CreateNewWeaponData()
         {
-            enemyData = ScriptableObject.CreateInstance<EnemyData>();
-            enemyData.enemyName = "New Enemy Data";
+            weaponData = ScriptableObject.CreateInstance<WeaponData>();
+            weaponData.weaponName = "New Weapon Data";
         }
 
         [InlineEditor(ObjectFieldMode = InlineEditorObjectFieldModes.Hidden)]
-        public EnemyData enemyData;
+        public WeaponData weaponData;
 
 
-        [Button("Add New Enemy")]
+        [Button("Add New Weapon")]
         private void CreateNewData()
         {
-            AssetDatabase.CreateAsset(enemyData, "Assets/04_Data/" + enemyData.enemyName + ".asset");
+            AssetDatabase.CreateAsset(weaponData, "Assets/04_Data/" + weaponData.weaponName + ".asset");
             AssetDatabase.SaveAssets();
 
                 
             //create new instance
-            enemyData = ScriptableObject.CreateInstance<EnemyData>();
-            enemyData.enemyName = "New Enemy Data";
+            weaponData = ScriptableObject.CreateInstance<WeaponData>();
+            weaponData.weaponName = "New Weapon Data";
         }
     }
 
