@@ -13,7 +13,7 @@ using Sirenix.OdinInspector.Editor.Examples;
 public class WeaponData : SerializedScriptableObject
 {
 
-    [HorizontalGroup("Basic Info", 150)]
+    [VerticalGroup("Basic Info")]
     [PreviewField(150)]
     [HideLabel]
     [PropertyTooltip("이미지")]
@@ -30,9 +30,10 @@ public class WeaponData : SerializedScriptableObject
         GUILayout.EndVertical();
     }*/
     
-    [HorizontalGroup("Basic Info")]
-    [PropertyTooltip("무기 이름")]
-    public string weaponName;
+    [VerticalGroup("Basic Info")] // 스탯 별 카테고리
+    [LabelWidth(100)] // 스탯 좌우 길이
+    [PropertyTooltip("무기 이름")] // 툴팁
+    public string weaponName; // 변수명
 
     [VerticalGroup("Basic Info")]
     [LabelWidth(100)]
@@ -46,12 +47,6 @@ public class WeaponData : SerializedScriptableObject
     public string description;
 
 
-    [VerticalGroup("Game Data/Stats")]
-    [ProgressBar("Min", "Max", r: 1f, g: 0, b: 0, Height = 30)]
-    [PropertyTooltip("공격력")]
-    public int attackPoint;
-    private int Min = 0;
-    public int Max;
 
 
 
