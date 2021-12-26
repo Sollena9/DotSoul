@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: New Category
+    m_Hash: -1887952825
+    m_CategoryList:
+    - m_Name: Head
+      m_Hash: 130111906
+      m_Sprite: {fileID: 0}
+    - m_Name: Hand_Right
+      m_Hash: -778668139
+      m_Sprite: {fileID: 0}
+    - m_Name: Hand_Left
+      m_Hash: -1766023120
+      m_Sprite: {fileID: 0}
+    - m_Name: Body
+      m_Hash: 2073732236
+      m_Sprite: {fileID: 0}
+    - m_Name: Leg
+      m_Hash: 1302185647
+      m_Sprite: {fileID: 0}
+  - m_Name: Weapon
+    m_Hash: 1855955664
+    m_CategoryList:
+    - m_Name: Right
+      m_Hash: 1963678224
+      m_Sprite: {fileID: 0}
+    - m_Name: Left
+      m_Hash: -631945130
+      m_Sprite: {fileID: 0}

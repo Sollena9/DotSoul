@@ -1,5 +1,10 @@
 fileFormatVersion: 2
 guid: b20ef4fefc81742428c81d3610e63e3f
+labels:
+- name
+- 0000
+- spriteId
+- dcb22b46785004bc7b1a708d21c81f2e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,9 +111,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Hand_Right
-      position: {x: 1.7905426, y: 3.0236454, z: 0}
-      rotation: {x: 0, y: 0, z: -0.3826845, w: 0.9238791}
-      length: 0.1520041
+      position: {x: 2.0705452, y: 2.503645, z: 0}
+      rotation: {x: 0, y: 0, z: -0.33229843, w: 0.9431743}
+      length: 0.11429078
       parentId: -1
     spriteOutline: []
     vertices:
@@ -155,13 +160,13 @@ ScriptedImporter:
     spritePhysicsOutline: []
     indices: 000000000300000002000000020000000100000000000000
     edges:
-    - {x: 1, y: 2}
-    - {x: 0, y: 3}
     - {x: 3, y: 2}
     - {x: 1, y: 0}
+    - {x: 2, y: 1}
+    - {x: 0, y: 3}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -13, y: -1}
+    uvTransform: {x: -13, y: -2}
   - name: 0000_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -177,9 +182,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Hand_Left
-      position: {x: 2.0693283, y: 2.2386131, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      length: 0
+      position: {x: 2.009327, y: 2.5386133, z: 0}
+      rotation: {x: 0, y: 0, z: 0.39271444, w: 0.91966045}
+      length: 0.10160473
       parentId: -1
     spriteOutline: []
     vertices:
@@ -226,10 +231,10 @@ ScriptedImporter:
     spritePhysicsOutline: []
     indices: 000000000300000002000000020000000100000000000000
     edges:
+    - {x: 2, y: 1}
+    - {x: 0, y: 3}
     - {x: 3, y: 2}
     - {x: 1, y: 0}
-    - {x: 0, y: 3}
-    - {x: 1, y: 2}
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 24, y: -2}
@@ -993,7 +998,27 @@ ScriptedImporter:
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
-    categories: []
+    categories:
+    - name: Hand_Right
+      labels:
+      - name: 0000
+        spriteId: dcb22b46785004bc7b1a708d21c81f2e
+    - name: Hand_Left
+      labels:
+      - name: 0000
+        spriteId: aad9c40c8baa247b78f8d22d6bef6d33
+    - name: Head
+      labels:
+      - name: 0000
+        spriteId: 5c7bdf50bd665469f8678847f25e48be
+    - name: Body
+      labels:
+      - name: 0000
+        spriteId: 3040181aae1e54c5e8fab70b9bbdc139
+    - name: Leg
+      labels:
+      - name: 0000
+        spriteId: 4578644bdcf694fae9f4f8b06c8b59eb
   textureActualWidth: 64
   textureActualHeight: 64
   spritePackingTag: 
@@ -1001,13 +1026,6 @@ ScriptedImporter:
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Weapon
-    spriteName: 
-    isGroup: 1
-    parentIndex: -1
-    spriteID: 
-    layerID: 17
-    mosaicPosition: {x: 0, y: 0}
   - name: Hand_Right
     spriteName: 
     isGroup: 1
@@ -1018,7 +1036,7 @@ ScriptedImporter:
   - name: 0000
     spriteName: 0000
     isGroup: 0
-    parentIndex: 1
+    parentIndex: 0
     spriteID: dcb22b46785004bc7b1a708d21c81f2e
     layerID: 11
     mosaicPosition: {x: 38, y: 4}
@@ -1032,7 +1050,7 @@ ScriptedImporter:
   - name: 0000
     spriteName: 0000_1
     isGroup: 0
-    parentIndex: 3
+    parentIndex: 2
     spriteID: aad9c40c8baa247b78f8d22d6bef6d33
     layerID: 16
     mosaicPosition: {x: 50, y: 4}
@@ -1046,7 +1064,7 @@ ScriptedImporter:
   - name: 0000
     spriteName: 0000_2
     isGroup: 0
-    parentIndex: 5
+    parentIndex: 4
     spriteID: 5c7bdf50bd665469f8678847f25e48be
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
@@ -1060,7 +1078,7 @@ ScriptedImporter:
   - name: 0000
     spriteName: 0000_3
     isGroup: 0
-    parentIndex: 7
+    parentIndex: 6
     spriteID: 3040181aae1e54c5e8fab70b9bbdc139
     layerID: 3
     mosaicPosition: {x: 37, y: 31}
@@ -1074,7 +1092,7 @@ ScriptedImporter:
   - name: 0000
     spriteName: 0000_4
     isGroup: 0
-    parentIndex: 9
+    parentIndex: 8
     spriteID: 4578644bdcf694fae9f4f8b06c8b59eb
     layerID: 10
     mosaicPosition: {x: 4, y: 31}
@@ -1096,19 +1114,19 @@ ScriptedImporter:
       length: 6.8926873
       parentId: 0
     - name: Hand_Left
-      position: {x: 28.069326, y: 8.238613, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      length: 0
+      position: {x: 28.009327, y: 8.538613, z: 0}
+      rotation: {x: 0, y: 0, z: 0.39271444, w: 0.91966045}
+      length: 0.10160472
       parentId: -1
     - name: Hand_Right
-      position: {x: 52.790543, y: 8.023645, z: 0}
-      rotation: {x: 0, y: 0, z: -0.3826845, w: 0.9238791}
-      length: 0.15200411
+      position: {x: 53.070545, y: 8.503645, z: 0}
+      rotation: {x: 0, y: 0, z: -0.33229843, w: 0.9431743}
+      length: 0.11429078
       parentId: -1
     parts:
     - spritePosition:
         x: 51
-        y: 5
+        y: 6
         width: 4
         height: 5
       spriteId: dcb22b46785004bc7b1a708d21c81f2e
