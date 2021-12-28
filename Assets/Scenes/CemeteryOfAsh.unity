@@ -3737,7 +3737,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 2057930541}
+  m_Follow: {fileID: 1124316164}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -3998,6 +3998,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116850099}
   m_CullTransparentMesh: 0
+--- !u!4 &1124316164 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8015783997109859296, guid: 47593e7eb5c76ae4d8f9cebda9528695,
+    type: 3}
+  m_PrefabInstance: {fileID: 754741428801909172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1138764048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9667,12 +9673,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2057930541 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7297142322356980765, guid: 6f70e3b09b7474b4c989294aff06ad4f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7297142322450860848}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2063728341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6473071329574880919, guid: 002ae3858eb97004cb50291c656acff8,
@@ -10095,6 +10095,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6660780221857891320, guid: 47593e7eb5c76ae4d8f9cebda9528695,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1758237657114999881, guid: d486ac6e9d5605a4c85539bce9b5ffef,
+        type: 3}
     - target: {fileID: 8015783997109859296, guid: 47593e7eb5c76ae4d8f9cebda9528695,
         type: 3}
       propertyPath: m_RootOrder

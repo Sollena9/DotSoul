@@ -41,7 +41,7 @@ public class Player_Movement : PlayerInfo
         isJumping = false;
         moveVelocity = Vector3.left;
 
-        StartCoroutine(LookChange());
+        //StartCoroutine(LookChange());
 
         var slide = FindObjectOfType<SliderManager>();
         slide.hp.maxValue = base.HP;
@@ -63,15 +63,17 @@ public class Player_Movement : PlayerInfo
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.1f, transform.position.y),
             new Vector2(transform.position.x + 0.1f, transform.position.y ), whatIsGrounded);               //두줄 이어지는 코드
             InputManager();
-
+        LookChange();
 
     }
 
     private void FixedUpdate()
     {
+
+
         if (isGrounded)
         {
-            anim.SetBool("Jump", false);
+            //anim.SetBool("Jump", false);
             jumpcounter = 1;
         }
 
@@ -270,7 +272,7 @@ public class Player_Movement : PlayerInfo
 
         else if(Input.GetAxisRaw("Horizontal") == 0)
         {
-            anim.SetInteger("MoveSpeed", 0);
+            //anim.SetInteger("MoveSpeed", 0);
         }
 
         if(Input.GetButtonUp("Horizontal"))
@@ -306,7 +308,7 @@ public class Player_Movement : PlayerInfo
 
         //공격
         // 잡기 상태가 StateManager에서 혼돈와서 나중에 수정해야됨
-        if (Input.GetKeyDown(KeyCode.K) && StateManager(State.Attack))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && StateManager(State.Attack))
             Attack();
        
 
@@ -370,6 +372,25 @@ public class Player_Movement : PlayerInfo
 
     }
 
+    private void LookChange()
+    {
+        //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.mousePosition.x <= 960)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            isRightFace = false;
+        }
+
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            isRightFace = true;
+        }
+        Debug.Log(Input.mousePosition.x);
+    }
+
+    /*
     IEnumerator LookChange()
     {
         if (Input.mousePosition.x < 960)
@@ -384,10 +405,10 @@ public class Player_Movement : PlayerInfo
             isRightFace = true;
         }
 
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return new WaitForSecondsRealtime(0.05f);
 
         StartCoroutine(LookChange());
-    }
+    }*/
 
     private void ExitRoll()
     {
@@ -397,7 +418,7 @@ public class Player_Movement : PlayerInfo
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(pos.position, boxSize);
+        //Gizmos.DrawWireCube(pos.position, boxSize);
     }
 
 }

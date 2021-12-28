@@ -51,13 +51,11 @@ public class WeaponData : SerializedScriptableObject
 
 
 
-    [ProgressBar(0, 40, r: 0.15f, g: 0.17f, b: 0.74f, Height = 30)]
-    [PropertyTooltip("이동 속도")]
-    public int movePower;
+    [PropertyTooltip("무기 히트박스 크기")]
+    public Vector2 hitBoxValue;
 
-    [ProgressBar(0, 100, r: 0f, g: 0f, b: 0f, Height = 30)]
-    [PropertyTooltip("색적 시야")]
-    public int detectRange;
+    [PropertyTooltip("무기 히트박스 위치")]
+    public Transform hitBoxPosition;
 
     [ProgressBar(0, 100, r: 1f, g: 1f, b: 1f, Height = 30)]
     [PropertyTooltip("공격 사정거리")]

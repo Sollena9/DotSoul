@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerAttackManager : MonoBehaviour
 {
-    public GameObject attAngle;
-    public GameObject weapon;
-    public GameObject shield;
+
+    public WeaponData weapondata;
+    public GameObject eqipweapon;
+
     private Player_Movement thePlayer;
     public GameObject[] weponlist;
 
@@ -32,7 +33,7 @@ public class PlayerAttackManager : MonoBehaviour
     {
         //먼저 계산을 위해 마우스와 게임 오브젝트의 현재의 좌표를 임시로 저장합니다.
         Vector3 mPosition = Input.mousePosition; //마우스 좌표 저장
-        Vector3 oPosition = attAngle.transform.position; //게임 오브젝트 좌표 저장
+        Vector3 oPosition = eqipweapon.transform.position; //게임 오브젝트 좌표 저장
 
         //카메라가 앞면에서 뒤로 보고 있기 때문에, 마우스 position의 z축 정보에 
         //게임 오브젝트와 카메라와의 z축의 차이를 입력시켜줘야 합니다.
@@ -59,7 +60,9 @@ public class PlayerAttackManager : MonoBehaviour
             rotateDegree += 180f;
 
         //구해진 각도를 오일러 회전 함수에 적용하여 z축을 기준으로 게임 오브젝트를 회전시킵니다.
-        attAngle.transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
+        eqipweapon.transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
+
+        //if(rotateDegree <= 90 || rotateDegree )
     }
 
 
