@@ -32,36 +32,6 @@ Transform:
   m_Father: {fileID: 2772225790586492678}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &498123208704827955
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7122443491831624887}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7122443491831624887
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 498123208704827955}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09796667, y: 0.6324808, z: -0.7656475}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8015783997109859296}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892141493729706519
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +67,7 @@ Transform:
   - {fileID: 2391842103865855455}
   - {fileID: 2772225790586492678}
   m_Father: {fileID: 8015783997109859296}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7454968197660997876
 MonoBehaviour:
@@ -200,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5125034826022042872}
   - component: {fileID: 5008117736406425214}
+  - component: {fileID: 3589301559907360497}
   m_Layer: 15
   m_Name: Eqipment
   m_TagString: Untagged
@@ -274,6 +245,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3589301559907360497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2255316062622698905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06213c03cd4af4f2ca7d90f11a396d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapondata: {fileID: 11400000, guid: 8d311aca4d1d046dc9adf09a67ad3fa7, type: 2}
+  weponlist:
+  - {fileID: 0}
+  thePlayer: {fileID: 0}
+  state: {fileID: 0}
 --- !u!1 &2594677220874887742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,10 +1018,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8015783997109859296}
+  - component: {fileID: 1257909846490104786}
   - component: {fileID: 8015783997109859299}
   - component: {fileID: 8015783997109859298}
   - component: {fileID: 4915134446245221155}
-  - component: {fileID: 3651785274266924098}
   - component: {fileID: 754741429463482367}
   - component: {fileID: 8015783997109859302}
   - component: {fileID: 8015783997109859303}
@@ -1056,11 +1044,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5125034826022042872}
-  - {fileID: 7122443491831624887}
   - {fileID: 6465480951608168986}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1257909846490104786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015783997109859301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7180f34ed4e48418d866aeca752909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flags: 0
 --- !u!61 &8015783997109859299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1137,9 +1137,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  state: 0
-  pos: {fileID: 0}
-  boxSize: {x: 1.5, y: 1.5}
+  state: {fileID: 0}
   playerFreeze: 0
   rigid: {fileID: 0}
   anim: {fileID: 0}
@@ -1171,21 +1169,6 @@ MonoBehaviour:
   - 0
   - 0
   canUseSkill: 0000
---- !u!114 &3651785274266924098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015783997109859301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf001fd03bc9040a1aef971cdaa440d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapondata: {fileID: 11400000, guid: 8d311aca4d1d046dc9adf09a67ad3fa7, type: 2}
-  eqipweapon: {fileID: 2255316062622698905}
-  weponlist: []
 --- !u!50 &754741429463482367
 Rigidbody2D:
   serializedVersion: 4

@@ -1,24 +1,23 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackManager : MonoBehaviour
+public class EqipmentManager : MonoBehaviour
 {
-
+    // Start is called before the first frame update
     public WeaponData weapondata;
-    public GameObject eqipweapon;
 
-    private Player_Movement thePlayer;
     public GameObject[] weponlist;
-    public BoxCollider2D coco;
+    public Player_Movement thePlayer;
+    public PlayerTag state;
 
 
     private void Start()
     {
-        thePlayer = GetComponent<Player_Movement>();
+        thePlayer = transform.parent.GetComponent<Player_Movement>();
+        state = transform.parent.GetComponent<PlayerTag>();
 
-
-        if (GetComponent<PlayerInfo>().eqipWeapon)
+        if (transform.parent.GetComponent<PlayerInfo>().eqipWeapon)
             EqipWeapon(0);
 
     }
@@ -34,7 +33,7 @@ public class PlayerAttackManager : MonoBehaviour
     {
         //먼저 계산을 위해 마우스와 게임 오브젝트의 현재의 좌표를 임시로 저장합니다.
         Vector3 mPosition = Input.mousePosition; //마우스 좌표 저장
-        Vector3 oPosition = eqipweapon.transform.position; //게임 오브젝트 좌표 저장
+        Vector3 oPosition = transform.position; //게임 오브젝트 좌표 저장
 
         //카메라가 앞면에서 뒤로 보고 있기 때문에, 마우스 position의 z축 정보에 
         //게임 오브젝트와 카메라와의 z축의 차이를 입력시켜줘야 합니다.
@@ -60,8 +59,14 @@ public class PlayerAttackManager : MonoBehaviour
         if (!thePlayer.isRightFace)
             rotateDegree += 180f;
 
+
         //구해진 각도를 오일러 회전 함수에 적용하여 z축을 기준으로 게임 오브젝트를 회전시킵니다.
-        eqipweapon.transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
+        if (!state.HasFlag(State._Combat))
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, rotateDegree);
+
+
+        }
 
         //if(rotateDegree <= 90 || rotateDegree )
     }
@@ -77,12 +82,16 @@ public class PlayerAttackManager : MonoBehaviour
     void EqipWeapon(int weaponNum)
     {
 
-            GameObject normalWeapon = Instantiate(weponlist[weaponNum], transform.localPosition, Quaternion.identity);
-            //normalWeapon.transform.position = normalWeapon.GetComponent<weaponInfo>().spawnPosition;
+        GameObject normalWeapon = Instantiate(weponlist[weaponNum], transform.localPosition, Quaternion.identity);
+        //normalWeapon.transform.position = normalWeapon.GetComponent<weaponInfo>().spawnPosition;
 
 
     }
 
 
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.gameObject.name);
 
+    }
 }

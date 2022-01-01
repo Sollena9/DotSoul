@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
+
 public class Player_Movement : PlayerInfo
 {
-   public enum State
-    {
-        Idle, Walk, Jump, Attack, Guard, Guard_Walk, Estus, Estus_Walk, Dodge, Parry, Grab , Die
 
-    };
 
-    public State state;
-    public Transform pos;
-    public Vector2 boxSize;
 
+    public PlayerTag state;
     public bool playerFreeze;
 
     public Rigidbody2D rigid;
@@ -28,20 +23,18 @@ public class Player_Movement : PlayerInfo
     public bool isRightFace;
 
     private void Awake()
-    {   
-        state = State.Idle;
+    {
 
     }
 
     void Start()
     {
+        state = GetComponent<PlayerTag>();
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         cooltimeManager = GetComponent<PlayerCooltimeManager>();
         isJumping = false;
         moveVelocity = Vector3.left;
-
-        //StartCoroutine(LookChange());
 
         var slide = FindObjectOfType<SliderManager>();
         slide.hp.maxValue = base.HP;
@@ -52,11 +45,10 @@ public class Player_Movement : PlayerInfo
 
     void Update()
     {
-        if(HP <= 0 && !(state == State.Die))
+        if(HP <= 0)
         {
             FindObjectOfType<SystemManager>().StartCoroutine("PrintYouDied");
 
-            state = State.Die;
             //anim.SetBool("Die", true);
         }
 
@@ -103,14 +95,13 @@ public class Player_Movement : PlayerInfo
     }
     private void Jump()
     {
-        if (!isJumping)
+        if (!state.HasFlag(State._Jump))
             return;
-        StartCoroutine(BacktoIdle(State.Jump, 1f));
         anim.SetBool("Jump", true);
         rigid.velocity = Vector2.zero;
         Vector2 jumpVelocity = new Vector2(0, jumpPower);
         rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
-        isJumping = false;
+        state.RemoveFlag(State._Jump);
     }
 
     private void Guard()
@@ -146,147 +137,33 @@ public class Player_Movement : PlayerInfo
 
 
 
-    private void Attack()
-    {
-        anim.SetTrigger("Attack");
-        StartCoroutine(BacktoIdle(State.Attack, 0.4f));
-
-        Collider2D[] col = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
-        foreach (Collider2D collider in col)
-        {
-
-            Debug.Log(collider.tag);
-            //공격
-            if (collider.gameObject.CompareTag("Enemy") && collider.GetComponent<EnemyInfo>().enemyState != EnemyInfo.State.Groggy)
-            {
-                //BacktoIdle(State.Attack, 1f);
-                //var enemyHp = collider.GetComponent<EnemyHp>();
-                //enemyHp.gameobject.setActive(true);
-                //enemyHp.hpvar.value -= attackpower;
-            }
-            //잡기
-            else if (collider.gameObject.tag == "Enemy" && collider.GetComponent<EnemyInfo>().enemyState == EnemyInfo.State.Groggy)
-            {
-                BacktoIdle(State.Grab, 10f);
-
-                if (collider.GetComponent<EnemyInfo>().enemyLevel > 0)
-                    anim.SetInteger("Grab", 1);
-                else
-                    anim.SetInteger("Grab", 0);
-
-            }
-
-        }
 
 
-
-    }
-
-    private IEnumerator BacktoIdle(State type, float time)
-    {
-        if(type == State.Dodge)
-        {
-            yield return new WaitForSecondsRealtime(0.5f);
-
-            playerFreeze = false;
-            rigid.velocity = new Vector2(0, 0);
-            yield return new WaitForSecondsRealtime(0.3f);
-
-            state = State.Idle;
-        }
-
-        else if(type == State.Attack)
-        {
-            yield return new WaitForSecondsRealtime(time);
-            state = State.Idle;
-        }
-
-        else if(type == State.Jump)
-        {
-            yield return new WaitForSecondsRealtime(time);
-            state = State.Idle;
-        }
-        else
-        {
-            state = State.Idle;
-        }
-    }
-
-
-    bool StateManager(State type)
-    {
-
-        if (type == State.Attack && (state != State.Attack && state != State.Parry && state != State.Estus && state != State.Estus_Walk && state != State.Dodge))
-        {
-            state = type;
-            return true;
-        }
-
-        else if (type == State.Parry && (state != State.Jump && state != State.Estus && state != State.Estus_Walk && state != State.Attack))
-        {
-            state = type;
-            return true;
-        }
-
-        else if (type == State.Jump && (state != State.Estus && state != State.Estus_Walk && state != State.Guard_Walk && state != State.Guard))
-        {
-            state = type;
-            return true;
-        }
-
-        else if (type == State.Dodge && (state != State.Jump && state != State.Estus && state != State.Estus_Walk))
-        {
-            state = type;
-            return true;
-        }
-
-        else if (type == State.Walk && (state != State.Jump))
-        {
-            state = type;
-            return true;
-        }
-
-        else
-            state = State.Idle;
-            return false;
-
-        
-
-    }
 
 
     void InputManager()
     {
 
-        if(state == State.Die)
-        {
-            return;
-        }
-
         //걷기
-        if (Input.GetAxisRaw("Horizontal") != 0 && !playerFreeze && StateManager(State.Walk))
+        if (Input.GetAxisRaw("Horizontal") != 0 && !playerFreeze)
         {
             movePower = 10;
+            state.AddFlag(State._Move);
             Walk();
         }
 
         else if(Input.GetAxisRaw("Horizontal") == 0)
         {
+            state.RemoveFlag(State._Move);
             //anim.SetInteger("MoveSpeed", 0);
         }
 
-        if(Input.GetButtonUp("Horizontal"))
-        {
-            StartCoroutine(BacktoIdle(State.Walk, 0f));
-
-        }
-
+       
 
         //짬푸
         if (Input.GetButtonDown("Jump") && jumpcounter > 0 && isGrounded )
         {
-            isJumping = true;
-            StateManager(State.Jump);
+            state.AddFlag(State._Jump);
             jumpcounter = 0;
             Jump();
 
@@ -294,27 +171,28 @@ public class Player_Movement : PlayerInfo
 
 
         //패링
-        if (Input.GetKey(KeyCode.Q) && StateManager(State.Parry) && cooltimeManager.canUseSkill[1])
+        if (Input.GetKey(KeyCode.Q)&& cooltimeManager.canUseSkill[1])
         {
-            Collider2D col = Physics2D.OverlapBox(pos.position, boxSize, 0);
-            if (col.gameObject.tag == "Enemy")
-            {
-                cooltimeManager.UseSkill(1);
-                Debug.Log("체크");
-            }
+            state.AddFlag(State._Parry);
+
 
         }
 
 
         //공격
         // 잡기 상태가 StateManager에서 혼돈와서 나중에 수정해야됨
-        if (Input.GetKeyDown(KeyCode.Mouse0) && StateManager(State.Attack))
-            Attack();
-       
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        { 
+            state.AddFlag(State._Attack);
+            state.AddFlag(State._Combat);
+            anim.SetTrigger("Attack");
+            
+        }
 
         // 구르기
-        if (Input.GetKeyDown(KeyCode.Z) && StateManager(State.Dodge) && cooltimeManager.canUseSkill[0])
+        if (Input.GetKeyDown(KeyCode.Z) && cooltimeManager.canUseSkill[0])
         {
+            state.AddFlag(State._Dodge);
             cooltimeManager.UseSkill(0);
             playerFreeze = true;
             Physics2D.IgnoreLayerCollision(15, 16, true);
@@ -322,7 +200,6 @@ public class Player_Movement : PlayerInfo
             anim.SetTrigger("Roll");
             rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
 
-            StartCoroutine(BacktoIdle(State.Dodge, 0.5f));
         }
 
         //가드/가드하고 걷기
@@ -330,15 +207,12 @@ public class Player_Movement : PlayerInfo
         {
             anim.SetBool("Guard", false);
         }
-        else if (Input.GetKeyDown(KeyCode.S) && state == State.Walk)
-        {
-            StateManager(State.Guard_Walk);
+        else if (Input.GetKeyDown(KeyCode.S))
+   
             Guard_Walk();
-        }
 
-        else if (Input.GetKeyDown(KeyCode.S) && state == State.Idle)
+        else if (Input.GetKeyDown(KeyCode.S))
         {
-            StateManager(State.Guard);
             Guard();
         }
 
@@ -346,16 +220,16 @@ public class Player_Movement : PlayerInfo
         //에스트
 
 
-        if (Input.GetKeyDown(KeyCode.R) && state != State.Idle)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            StateManager(State.Estus_Walk);
+            state.AddFlag(State._Estus);
             Estus_Walk();
             StartCoroutine(StateChange(0.5f));
         }
 
-        else if (Input.GetKeyDown(KeyCode.R) && state != State.Walk)
+        else if (Input.GetKeyDown(KeyCode.R))
         {
-            StateManager(State.Estus);
+
             Estus();
             StartCoroutine(StateChange(0.5f));
         }
@@ -387,28 +261,9 @@ public class Player_Movement : PlayerInfo
             transform.localScale = new Vector3(1, 1, 1);
             isRightFace = true;
         }
-        Debug.Log(Input.mousePosition.x);
+       
     }
 
-    /*
-    IEnumerator LookChange()
-    {
-        if (Input.mousePosition.x < 960)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-            isRightFace = false;
-        }
-
-        else
-        { 
-            transform.localScale = new Vector3(1, 1, 1);
-            isRightFace = true;
-        }
-
-        yield return new WaitForSecondsRealtime(0.05f);
-
-        StartCoroutine(LookChange());
-    }*/
 
     private void ExitRoll()
     {
@@ -420,5 +275,14 @@ public class Player_Movement : PlayerInfo
         Gizmos.color = Color.red;
         //Gizmos.DrawWireCube(pos.position, boxSize);
     }
+
+    public void asdfasdfasdfasdfasdfasdfasdf(bool value, State con)
+    {
+        if (value)
+            state.AddFlag(con);
+        else
+            state.RemoveFlag(con);
+    }
+
 
 }
