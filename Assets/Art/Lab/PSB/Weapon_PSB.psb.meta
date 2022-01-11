@@ -111,9 +111,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Sword
-      position: {x: 6.2396126, y: 0.11785126, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7016188, w: 0.7125525}
-      length: 14.753211
+      position: {x: 6.4575577, y: 0.06336975, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70686424, w: 0.70734924}
+      length: 14.80594
       parentId: -1
     spriteOutline: []
     vertices: []
@@ -138,9 +138,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Sword
-      position: {x: 4.2396126, y: 0.117851734, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7016188, w: 0.7125525}
-      length: 14.753211
+      position: {x: 4.4575577, y: 0.06336641, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70686424, w: 0.70734924}
+      length: 14.80594
       parentId: -1
     spriteOutline: []
     vertices: []
@@ -165,9 +165,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Sword
-      position: {x: 6.2396126, y: 0.117851734, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7016188, w: 0.7125525}
-      length: 14.753211
+      position: {x: 6.4575577, y: 0.06336641, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70686424, w: 0.70734924}
+      length: 14.80594
       parentId: -1
     spriteOutline: []
     vertices:
@@ -229,22 +229,93 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 25
-      y: 55
+      y: 89
       width: 9
       height: 20
     spriteID: c7a67c00a01f0894a9898d5dea896f5e
     internalID: 0
     spriteBone:
     - name: Sword
-      position: {x: 4.2396126, y: 0.11785126, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7016188, w: 0.7125525}
-      length: 14.753211
+      position: {x: 4.4575577, y: 0.06336975, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70686424, w: 0.70734924}
+      length: 14.80594
       parentId: -1
     spriteOutline: []
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -10, y: 89}
+  - name: longsword
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 25
+      y: 55
+      width: 9
+      height: 26
+    spriteID: f6d1ad4fbc1db41248236285060964e1
+    internalID: 0
+    spriteBone:
+    - name: Sword
+      position: {x: 4.4575577, y: 0.06336594, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70686424, w: 0.70734924}
+      length: 14.80594
+      parentId: -1
+    spriteOutline: []
+    vertices:
+    - position: {x: 9, y: 26}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 26}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 9, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0.03421974, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000300000001000000030000000000000002000000
+    edges:
+    - {x: 1, y: 3}
+    - {x: 2, y: 0}
+    - {x: 1, y: 0}
+    - {x: 3, y: 2}
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -10, y: 55}
@@ -320,6 +391,10 @@ ScriptedImporter:
       labels:
       - name: claymore
         spriteId: 1ea20f8f670a3534fa69746f274c81c9
+    - name: StraightSword
+      labels:
+      - name: StraightSword
+        spriteId: f6d1ad4fbc1db41248236285060964e1
   textureActualWidth: 64
   textureActualHeight: 128
   spritePackingTag: 
@@ -334,6 +409,13 @@ ScriptedImporter:
     spriteID: 00000000000000000000000000000000
     layerID: 17
     mosaicPosition: {x: 0, y: 0}
+  - name: longsword
+    spriteName: longsword
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f6d1ad4fbc1db41248236285060964e1
+    layerID: 28
+    mosaicPosition: {x: 25, y: 55}
   - name: uchigatana
     spriteName: uchigatana
     isGroup: 0
@@ -354,7 +436,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: c7a67c00a01f0894a9898d5dea896f5e
     layerID: 21
-    mosaicPosition: {x: 25, y: 55}
+    mosaicPosition: {x: 25, y: 89}
   - name: claymore
     spriteName: claymore
     isGroup: 0
@@ -365,11 +447,20 @@ ScriptedImporter:
   characterData:
     bones:
     - name: Sword
-      position: {x: 39.239613, y: 0.117851906, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7016188, w: 0.7125525}
-      length: 14.753212
+      position: {x: 39.457558, y: 0.06336643, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70686424, w: 0.70734924}
+      length: 14.80594
       parentId: -1
     parts:
+    - spritePosition:
+        x: 35
+        y: 0
+        width: 9
+        height: 26
+      spriteId: f6d1ad4fbc1db41248236285060964e1
+      bones: 00000000
+      parentGroup: 0
+      order: 0
     - spritePosition:
         x: 35
         y: 0

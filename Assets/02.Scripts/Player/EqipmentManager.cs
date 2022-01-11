@@ -24,7 +24,6 @@ public class EqipmentManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GetAttackAngle();
 
     }
 
