@@ -7,10 +7,13 @@ public class PlayerAttackManager : MonoBehaviour
 
     public WeaponData weapondata;
     public GameObject eqipweapon;
+    private bool comboPossible;
+    private int comboStack;
 
     private Player_Movement thePlayer;
     public GameObject[] weponlist;
     public BoxCollider2D coco;
+    public Animator anim;
 
 
     private void Start()
@@ -83,6 +86,49 @@ public class PlayerAttackManager : MonoBehaviour
 
     }
 
+
+    public void attack()
+    {
+        if(comboStack == 0)
+        {
+            anim.Play("Attack1");
+            comboStack = 1;
+            return;
+        }
+
+        if(comboStack != 0)
+        {
+            if(comboPossible)
+            {
+                comboPossible = false;
+                comboStack += 1;
+            }
+        }
+    }
+
+    public void ComboPossible()
+    {
+        comboPossible = true;
+    }
+
+    public void Combo()
+    {
+        if(comboStack == 2)
+        {
+            anim.Play("Attack2");
+        }
+
+        if (comboStack == 3)
+        {
+            anim.Play("Attack3");
+        }
+    }
+
+    public void ComboReset()
+    {
+        comboPossible = false;
+        comboStack = 0;
+    }
 
 
 }
