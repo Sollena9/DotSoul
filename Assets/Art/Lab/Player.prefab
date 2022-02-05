@@ -462,7 +462,7 @@ MonoBehaviour:
   movePower: 7
   jumpPower: 13
   jumpcounter: 0
-  dodgePower: 40
+  dodgePower: 10
   estusMaxCount: 0
   estusHPCurruntCount: 0
   estusMPCurruntCount: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
     m_Bits: 16384
   isGrounded: 0
   skillCoolTime:
-  - 5
+  - 0.5
   - 5
   eqipWeapon: 0
   eqipShield: 0

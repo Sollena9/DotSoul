@@ -180,10 +180,12 @@ public class Player_Movement : PlayerInfo
             playerFreeze = true;
             Physics2D.IgnoreLayerCollision(15, 16, true);
 
+            anim.SetFloat("AnimSpeed", -1);
+            //anim.Play("Roll");
             anim.SetTrigger("Roll");
             rigid.velocity = new Vector2(moveVelocity.x * dodgePower, 0f);
             //rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
-            StartCoroutine(ExitRoll(0.15f));
+            StartCoroutine(ExitRoll(0.35f));
 
         }
 
@@ -289,11 +291,14 @@ public class Player_Movement : PlayerInfo
 
     IEnumerator ExitRoll(float time)
     {
-        yield return new WaitForSeconds(time);
+
+
+        yield return new WaitForSecondsRealtime(time);
 
         Physics2D.IgnoreLayerCollision(15, 16, false);
         playerFreeze = false;
         rigid.velocity = Vector2.zero;
+        anim.SetFloat("AnimSpeed", 1);
 
         foreach (SpriteRenderer sprite in things)
         {

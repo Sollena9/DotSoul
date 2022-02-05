@@ -27,7 +27,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.05
+        time: 0.025
         value: {x: 0, y: 0, z: -42.688}
         inSlope: {x: 0, y: 0, z: -512.464}
         outSlope: {x: 0, y: 0, z: -512.464}
@@ -38,8 +38,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.125
         value: {x: 0, y: 0, z: -62.62}
-        inSlope: {x: 0, y: 0, z: -637.824}
-        outSlope: {x: 0, y: 0, z: -637.824}
+        inSlope: {x: 0, y: 0, z: -531.5199}
+        outSlope: {x: 0, y: 0, z: -531.5199}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -323,7 +323,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.05
+        time: 0.025
         value: 0
         inSlope: 0
         outSlope: 0
@@ -396,7 +396,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.05
+        time: 0.025
         value: 0
         inSlope: 0
         outSlope: 0
@@ -469,7 +469,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.05
+        time: 0.025
         value: -42.688
         inSlope: -512.464
         outSlope: -512.464
@@ -480,8 +480,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.125
         value: -62.62
-        inSlope: -637.824
-        outSlope: -637.824
+        inSlope: -531.5199
+        outSlope: -531.5199
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -1059,7 +1059,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: PlayerArvatar_PSB/Spine/Body_1
+    path: PlayerArvatar_PSB/Spine/Leg_1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1069,7 +1069,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: PlayerArvatar_PSB/Spine/Body_1
+    path: PlayerArvatar_PSB/Spine/Leg_1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1079,7 +1079,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: PlayerArvatar_PSB/Spine/Body_1
+    path: PlayerArvatar_PSB/Spine/Leg_1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1119,7 +1119,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: PlayerArvatar_PSB/Spine/Leg_1
+    path: PlayerArvatar_PSB/Spine/Body_1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1129,7 +1129,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: PlayerArvatar_PSB/Spine/Leg_1
+    path: PlayerArvatar_PSB/Spine/Body_1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1139,7 +1139,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: PlayerArvatar_PSB/Spine/Leg_1
+    path: PlayerArvatar_PSB/Spine/Body_1
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
