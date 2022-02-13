@@ -10372,6 +10372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
         type: 3}
+      propertyPath: roll
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
       propertyPath: attAngle
       value: 
       objectReference: {fileID: 0}
@@ -10510,6 +10515,16 @@ PrefabInstance:
       propertyPath: m_labelHash
       value: 1.6299306e+36
       objectReference: {fileID: 0}
+    - target: {fileID: 4187572068698803491, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676228001684527907, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4676228002698192404, guid: ff65e5187c6e9344293b8c4c4e78cf92,
         type: 3}
       propertyPath: m_Mass
@@ -10545,6 +10560,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_labelHash
       value: 1.6299306e+36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017015736525190909, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017015736525190909, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017015736525190909, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8778564618865342967, guid: ff65e5187c6e9344293b8c4c4e78cf92,
         type: 3}

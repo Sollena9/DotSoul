@@ -14,18 +14,18 @@ public class Player_Movement : PlayerInfo
     public Animator anim;
     public Vector3 moveVelocity = Vector3.zero;
     
-    bool isJumping;
+    //bool isJumping;
 
     private PlayerCooltimeManager cooltimeManager;
     public GameObject attAngle;
     public bool isRightFace;
+    private Animation roll;
 
     [SerializeField]
     private SpriteRenderer[] things;
 
     private void Awake()
     {
-
     }
 
     void Start()
@@ -34,7 +34,7 @@ public class Player_Movement : PlayerInfo
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         cooltimeManager = GetComponent<PlayerCooltimeManager>();
-        isJumping = false;
+//        isJumping = false;
         moveVelocity = Vector3.left;
 
         var slide = FindObjectOfType<SliderManager>();
@@ -180,14 +180,27 @@ public class Player_Movement : PlayerInfo
             playerFreeze = true;
             Physics2D.IgnoreLayerCollision(15, 16, true);
 
-            anim.SetFloat("AnimSpeed", -1);
-            //anim.Play("Roll");
+
+            if (moveVelocity.x < 0 && isRightFace)
+                anim.SetFloat("RollDirection", -1f);
+            else
+                anim.SetFloat("RollDirection", 1f);
+
             anim.SetTrigger("Roll");
+
+
             rigid.velocity = new Vector2(moveVelocity.x * dodgePower, 0f);
             //rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
-            StartCoroutine(ExitRoll(0.35f));
+            StartCoroutine(ExitRoll(0.5f));
 
         }
+
+        //가드/가드하고 걷기
+        if (Input.GetKey(KeyCode.K))
+        {
+            anim.Play("Guard");
+        }
+
 
         /*
 
@@ -210,34 +223,8 @@ public class Player_Movement : PlayerInfo
          }
 
 
-         //공격
-         // 잡기 상태가 StateManager에서 혼돈와서 나중에 수정해야됨
-         if (Input.GetKeyDown(KeyCode.Mouse0))
-         { 
-             state.AddFlag(State._Attack);
-             state.AddFlag(State._Combat);
-             anim.SetFloat("AttackNormal", 1);
-             //StartCoroutine("test_Up", "Attack");
 
-         }
-
-
-
-         //가드/가드하고 걷기
-         if (Input.GetKeyUp(KeyCode.S))
-         {
-             anim.SetBool("Guard", false);
-         }
-         else if (Input.GetKeyDown(KeyCode.S))
-
-             Guard_Walk();
-
-         else if (Input.GetKeyDown(KeyCode.S))
-         {
-             Guard();
-         }
-
-
+ 
          //에스트
 
 
@@ -298,7 +285,7 @@ public class Player_Movement : PlayerInfo
         Physics2D.IgnoreLayerCollision(15, 16, false);
         playerFreeze = false;
         rigid.velocity = Vector2.zero;
-        anim.SetFloat("AnimSpeed", 1);
+        anim.SetFloat("RollDirection", 0);
 
         foreach (SpriteRenderer sprite in things)
         {
