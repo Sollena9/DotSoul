@@ -6,15 +6,12 @@ public class PlayerInfo : MonoBehaviour
 {
     public int Level;
 
-    public float[] statArray = new float[5];
-    //여기서부터 순서대로
-
     public float HP;
     public float FP;
     public float SP;
     public float movePower;
     public float jumpPower;
-    public int jumpcounter;
+    public int jumpCounter;
     public float dodgePower;
 
     public int estusMaxCount; // 최대 소유 가능한 에스트 HP+MP = 최대 개ㅅ

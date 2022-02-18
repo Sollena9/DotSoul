@@ -24,22 +24,26 @@ public class Player_Movement : PlayerInfo
     [SerializeField]
     private SpriteRenderer[] things;
 
-    private void Awake()
-    {
-    }
+    [SerializeField]
+    private SliderManager slide;
 
-    void Start()
+
+    private void Awake()
     {
         state = GetComponent<PlayerTag>();
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         cooltimeManager = GetComponent<PlayerCooltimeManager>();
-//        isJumping = false;
-        moveVelocity = Vector3.left;
 
-        var slide = FindObjectOfType<SliderManager>();
+        moveVelocity = Vector3.left;
         slide.hp.maxValue = base.HP;
         slide.hp.value = base.HP;
+
+    }
+
+    void Start()
+    {
+
 
     }
 
@@ -68,7 +72,8 @@ public class Player_Movement : PlayerInfo
         if (isGrounded)
         {
             //anim.SetBool("Jump", false);
-            jumpcounter = 1;
+            jumpCounter = 1;
+            state.RemoveFlag(State._Jump);
         }
 
 
@@ -100,52 +105,44 @@ public class Player_Movement : PlayerInfo
     {
         if (!state.HasFlag(State._Jump))
             return;
-        anim.SetBool("Jump", true);
         rigid.velocity = Vector2.zero;
         Vector2 jumpVelocity = new Vector2(0, jumpPower);
         rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
-        state.RemoveFlag(State._Jump);
     }
+
+    private IEnumerator Estus()
+    {
+
+        if (base.estusHPCurruntCount != 0)
+        {
+            base.estusHPCurruntCount -= 1;
+            anim.Play("Estus");
+            movePower = guardMovePower;
+
+            slide.ResourceManager(0, +50f);
+
+            yield return new WaitForSeconds(2f);
+            state.RemoveFlag(State._Estus);
+            movePower += guardMovePower;
+        }
+
+        else
+            yield return null;
+
+
+
+    }
+
+    
+
     /*
-    private void Guard()
-    {
-        anim.SetBool("Guard", true);
-
-        DP = 100;
-
-    }
-
-    private void Guard_Walk()
-    {
-        anim.SetBool("Guard_Walk", true);
-
-        DP = 100;
-        movePower = guardMovePower;
-    }
-
-    private void Estus()
-    {
-        anim.SetBool("Estus", true);
-        movePower = guardMovePower;
-        HP += 50;
-    }
-
-    private void Estus_Walk()
-    {
-        anim.SetBool("Estus_Walk", true);
-
-        movePower = guardMovePower;
-        HP += 50;
-    }
-
-
     public void ReturnToidle(string param, float num)
     {
         Debug.Log("실행");
         anim.SetFloat(param, num);
-    }*/
+    }
 
-
+    */
 
 
     void InputManager()
@@ -154,7 +151,6 @@ public class Player_Movement : PlayerInfo
         //걷기
         if (Input.GetAxisRaw("Horizontal") != 0 && !playerFreeze)
         {
-            movePower = 10;
             state.AddFlag(State._Move);
             anim.SetFloat("idle", 0);
             Walk();
@@ -168,7 +164,7 @@ public class Player_Movement : PlayerInfo
         }
 
         // 구르기
-        if (Input.GetKeyDown(KeyCode.Mouse1) && cooltimeManager.canUseSkill[0])
+        if (Input.GetKeyDown(KeyCode.Mouse1) && cooltimeManager.canUseSkill[0] & !state.HasFlag(State._Jump))
         {
             foreach(SpriteRenderer sprite in things)
             {
@@ -181,10 +177,8 @@ public class Player_Movement : PlayerInfo
             Physics2D.IgnoreLayerCollision(15, 16, true);
 
 
-            if (moveVelocity.x < 0 && isRightFace)
-                anim.SetFloat("RollDirection", -1f);
-            else
-                anim.SetFloat("RollDirection", 1f);
+            if (moveVelocity.x * transform.localScale.x == -1)      RollStateSetUp(-1);
+            else if (moveVelocity.x * transform.localScale.x == 1)  RollStateSetUp(1);
 
             anim.SetTrigger("Roll");
 
@@ -195,24 +189,41 @@ public class Player_Movement : PlayerInfo
 
         }
 
-        //가드/가드하고 걷기
-        if (Input.GetKey(KeyCode.K))
+        //가드 해제
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            state.RemoveFlag(State._Guard);
+            base.movePower += base.guardMovePower;
+        }
+
+        else if(Input.GetKey(KeyCode.K))
         {
             anim.Play("Guard");
+            if(!state.HasFlag(State._Guard))            base.movePower -= base.guardMovePower;
+            state.AddFlag(State._Guard);
         }
 
 
-        /*
 
          //짬푸
-         if (Input.GetButtonDown("Jump") && jumpcounter > 0 && isGrounded )
+         if (Input.GetButtonDown("Jump") && jumpCounter > 0 && isGrounded )
          {
              state.AddFlag(State._Jump);
-             jumpcounter = 0;
+             jumpCounter = 0;
              Jump();
 
          }
 
+
+        //에스트
+        if (Input.GetKeyDown(KeyCode.R))        StartCoroutine(Estus());
+
+        if (Input.GetKeyDown(KeyCode.L))
+
+        {
+            slide.ResourceManager(0, -50f);
+        }
+        /*
 
          //패링
          if (Input.GetKey(KeyCode.Q)&& cooltimeManager.canUseSkill[1])
@@ -225,22 +236,7 @@ public class Player_Movement : PlayerInfo
 
 
  
-         //에스트
-
-
-         if (Input.GetKeyDown(KeyCode.R))
-         {
-             state.AddFlag(State._Estus);
-             Estus_Walk();
-             StartCoroutine(StateChange(0.5f));
-         }
-
-         else if (Input.GetKeyDown(KeyCode.R))
-         {
-
-             Estus();
-             StartCoroutine(StateChange(0.5f));
-         }*/
+       */
 
     }
 
@@ -282,10 +278,11 @@ public class Player_Movement : PlayerInfo
 
         yield return new WaitForSecondsRealtime(time);
 
+        state.RemoveFlag(State._Dodge);
         Physics2D.IgnoreLayerCollision(15, 16, false);
         playerFreeze = false;
         rigid.velocity = Vector2.zero;
-        anim.SetFloat("RollDirection", 0);
+        RollStateSetUp(0);
 
         foreach (SpriteRenderer sprite in things)
         {
@@ -303,7 +300,17 @@ public class Player_Movement : PlayerInfo
             state.RemoveFlag(con);
     }
 
+    private void RollStateSetUp(int vector)
+    {
+        if (vector == 0)
+        { 
+            anim.SetFloat("RollDirection_Left", 0);
+            anim.SetFloat("RollDirection_Right", 0);
+        }
+        else if(vector == 1)    anim.SetFloat("RollDirection_Right", 1);
+        else if (vector == -1)  anim.SetFloat("RollDirection_Left", 1);
 
+    }
 
 
 

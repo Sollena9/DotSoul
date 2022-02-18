@@ -337,7 +337,6 @@ public class Gundyr : MonoBehaviour
             {
                 SliderManager slide = FindObjectOfType<SliderManager>();
                 slide.ResourceManager(1, attkDamage[attackCount -1]);
-                slide.StartCoroutine(slide.SliderAniamtion(1, attkDamage[attackCount -1]));
             }
             
         }

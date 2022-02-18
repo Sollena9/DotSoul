@@ -7,13 +7,17 @@ public class EqipmentManager : MonoBehaviour
     // Start is called before the first frame update
     public WeaponData weapondata;
 
+    public WeaponData weaponRight;
+    public WeaponData weaponLeft;
+
     public GameObject[] weponlist;
     public Player_Movement thePlayer;
     public PlayerTag state;
 
     private bool comboPossible;
     private int comboStack;
-    public Animator anim;
+    [SerializeField]
+    private Animator anim;
 
 
     private void Start()
@@ -48,8 +52,6 @@ public class EqipmentManager : MonoBehaviour
 
         GameObject normalWeapon = Instantiate(weponlist[weaponNum], transform.localPosition, Quaternion.identity);
         //normalWeapon.transform.position = normalWeapon.GetComponent<weaponInfo>().spawnPosition;
-
-
     }
 
 
@@ -68,7 +70,7 @@ public class EqipmentManager : MonoBehaviour
 
         if (comboStack == 0)
         {
-            anim.Play("Attack");
+            anim.Play("RegularAttack");
             comboStack = 1;
             return;
         }
@@ -92,12 +94,12 @@ public class EqipmentManager : MonoBehaviour
     {
         if (comboStack == 2)
         {
-            anim.Play("Attack_Combo1");
+            anim.Play("RegularAttack_Combo1");
         }
 
         if (comboStack == 3)
         {
-            anim.Play("Attack_Combo2");
+            anim.Play("RegularAttack_Combo2");
         }
     }
 
@@ -107,5 +109,14 @@ public class EqipmentManager : MonoBehaviour
         comboStack = 0;
         thePlayer.StateChanger(false, State._Combat);
         thePlayer.StateChanger(false, State._Attack);
+    }
+
+
+    public void ChangeWeapon()
+    {
+        //inven에서 정보 로드(아이템 정보, 왼손/오른손)
+        //var isRightWeapon = GetComponent<>
+        
+
     }
 }
