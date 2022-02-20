@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SpriteTrail;
 
 public class PlayerInfo : MonoBehaviour
 {
@@ -36,7 +37,8 @@ public class PlayerInfo : MonoBehaviour
     public bool eqipWeapon;
     public bool eqipShield;
 
-
+    [SerializeField]
+    protected SpriteTrail.SpriteTrail[] trails;
 
     //레벨업 시 스탯 증가 계수- HP, FP, SP, AP, MP, DP 순서
     public float[] increaseStat = new float[6];

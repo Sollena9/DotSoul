@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using SpriteTrail;
 
 
 public class Player_Movement : PlayerInfo
@@ -19,13 +20,14 @@ public class Player_Movement : PlayerInfo
     private PlayerCooltimeManager cooltimeManager;
     public GameObject attAngle;
     public bool isRightFace;
-    private Animation roll;
 
     [SerializeField]
     private SpriteRenderer[] things;
 
     [SerializeField]
     private SliderManager slide;
+
+
 
 
     private void Awake()
@@ -41,12 +43,7 @@ public class Player_Movement : PlayerInfo
 
     }
 
-    void Start()
-    {
-
-
-    }
-
+   
 
     void Update()
     {
@@ -61,7 +58,8 @@ public class Player_Movement : PlayerInfo
 
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.1f, transform.position.y),
             new Vector2(transform.position.x + 0.1f, transform.position.y ), whatIsGrounded);               //두줄 이어지는 코드
-            
+
+        //if (!state.HasFlag(State._Combat)) slide.;
 
     }
 
@@ -164,27 +162,9 @@ public class Player_Movement : PlayerInfo
         }
 
         // 구르기
-        if (Input.GetKeyDown(KeyCode.Mouse1) && cooltimeManager.canUseSkill[0] & !state.HasFlag(State._Jump))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && cooltimeManager.canUseSkill[0] && !state.HasFlag(State._Jump) && slide.sp.value > 0)
         {
-            foreach(SpriteRenderer sprite in things)
-            {
-                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
-            }
 
-            state.AddFlag(State._Dodge);
-            cooltimeManager.UseSkill(0);
-            playerFreeze = true;
-            Physics2D.IgnoreLayerCollision(15, 16, true);
-
-
-            if (moveVelocity.x * transform.localScale.x == -1)      RollStateSetUp(-1);
-            else if (moveVelocity.x * transform.localScale.x == 1)  RollStateSetUp(1);
-
-            anim.SetTrigger("Roll");
-
-
-            rigid.velocity = new Vector2(moveVelocity.x * dodgePower, 0f);
-            //rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
             StartCoroutine(ExitRoll(0.5f));
 
         }
@@ -193,12 +173,13 @@ public class Player_Movement : PlayerInfo
         if (Input.GetKeyUp(KeyCode.K))
         {
             state.RemoveFlag(State._Guard);
+            anim.SetBool("Guard", false);
             base.movePower += base.guardMovePower;
         }
 
         else if(Input.GetKey(KeyCode.K))
         {
-            anim.Play("Guard");
+            anim.SetBool("Guard", true);
             if(!state.HasFlag(State._Guard))            base.movePower -= base.guardMovePower;
             state.AddFlag(State._Guard);
         }
@@ -274,6 +255,32 @@ public class Player_Movement : PlayerInfo
 
     IEnumerator ExitRoll(float time)
     {
+        //slide.ResourceManager(2, -100f);
+
+        foreach (SpriteRenderer sprite in things)
+        {
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+        }
+
+        state.AddFlag(State._Dodge);
+        cooltimeManager.UseSkill(0);
+        playerFreeze = true;
+        Physics2D.IgnoreLayerCollision(15, 16, true);
+
+
+        if (moveVelocity.x * transform.localScale.x == -1) RollStateSetUp(-1);
+        else if (moveVelocity.x * transform.localScale.x == 1) RollStateSetUp(1);
+
+        anim.SetTrigger("Roll");
+
+
+        rigid.velocity = new Vector2(moveVelocity.x * dodgePower, 0f);
+        //rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
+
+        foreach (SpriteTrail.SpriteTrail arry in trails)
+        {
+            arry.EnableTrail();
+        }
 
 
         yield return new WaitForSecondsRealtime(time);
@@ -288,6 +295,13 @@ public class Player_Movement : PlayerInfo
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 255);
         }
+
+
+        foreach (SpriteTrail.SpriteTrail arry in trails)
+        {
+            arry.DisableTrail();
+        }
+
     }
 
 

@@ -1937,6 +1937,45 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!1 &584877950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8852667618785885772, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+    type: 3}
+  m_PrefabInstance: {fileID: 4676228002822858847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &584877955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584877950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: Player_Head
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ae00113edc4824d09b4e39c37b27c191,
+    type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 0}
+  m_Layer: 15
+  m_ZMoveStep: 0.37
+  m_ZMoveMax: 0
+  m_HideTrailOnDisabled: 0
+  m_TrailActivationCondition: 1
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: -632729051
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!213 &626249908
 Sprite:
   m_ObjectHideFlags: 0
@@ -2353,6 +2392,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802512759}
   m_CullTransparentMesh: 0
+--- !u!1 &816389768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7533001559735425479, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+    type: 3}
+  m_PrefabInstance: {fileID: 4676228002822858847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &816389773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816389768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: Player_Body
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ae00113edc4824d09b4e39c37b27c191,
+    type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 0}
+  m_Layer: 15
+  m_ZMoveStep: 0.37
+  m_ZMoveMax: 0
+  m_HideTrailOnDisabled: 0
+  m_TrailActivationCondition: 1
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: -632729051
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!114 &870056732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3343,7 +3421,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1639996729
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 8860233558306054320, guid: 52804dd1ca2d37144a3248f245005345,
     type: 3}
@@ -8613,6 +8691,45 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!1 &1545836418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4187572068698803491, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+    type: 3}
+  m_PrefabInstance: {fileID: 4676228002822858847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1545836423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545836418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: Player_LHand
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ae00113edc4824d09b4e39c37b27c191,
+    type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 0}
+  m_Layer: 15
+  m_ZMoveStep: 0.37
+  m_ZMoveMax: 0
+  m_HideTrailOnDisabled: 0
+  m_TrailActivationCondition: 1
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: -632729051
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!1 &1550238755
 GameObject:
   m_ObjectHideFlags: 0
@@ -9050,6 +9167,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610199222}
   m_CullTransparentMesh: 0
+--- !u!1 &1626669943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6292434403741975233, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+    type: 3}
+  m_PrefabInstance: {fileID: 4676228002822858847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626669948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626669943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: Player_Leg
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ae00113edc4824d09b4e39c37b27c191,
+    type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 0}
+  m_Layer: 15
+  m_ZMoveStep: 0.37
+  m_ZMoveMax: 0
+  m_HideTrailOnDisabled: 0
+  m_TrailActivationCondition: 1
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: -632729051
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!114 &1845310865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9846,6 +10002,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075564951}
   m_CullTransparentMesh: 0
+--- !u!1 &2125575144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3685309604494769824, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+    type: 3}
+  m_PrefabInstance: {fileID: 4676228002822858847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2125575149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125575144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8edf2d55ca588547881b7472e926510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrailName: Player_RHand
+  m_CurrentTrailPreset: {fileID: 11400000, guid: ae00113edc4824d09b4e39c37b27c191,
+    type: 2}
+  m_TrailParent: {fileID: 0}
+  m_SpriteToDuplicate: {fileID: 0}
+  m_Layer: 15
+  m_ZMoveStep: 0.37
+  m_ZMoveMax: 0
+  m_HideTrailOnDisabled: 0
+  m_TrailActivationCondition: 1
+  m_TrailDeactivationCondition: 0
+  m_StartIfUnderVelocity: 0
+  m_VelocityStartIsLocalSpace: 0
+  m_VelocityNeededToStart: 0
+  m_StopIfOverVelocity: 0
+  m_VelocityStopIsLocalSpace: 0
+  m_VelocityNeededToStop: 0
+  m_TrailActivationDuration: 0
+  m_SortingLayerID: -632729051
+  m_OrderInSortingLayer: 0
+  m_DisabledElementsInTrail: []
 --- !u!1001 &2032837527585449487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10213,6 +10408,36 @@ PrefabInstance:
       propertyPath: slide
       value: 
       objectReference: {fileID: 1578624611}
+    - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: trails.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: trails.Array.data[0]
+      value: 
+      objectReference: {fileID: 816389773}
+    - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: trails.Array.data[1]
+      value: 
+      objectReference: {fileID: 1545836423}
+    - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: trails.Array.data[2]
+      value: 
+      objectReference: {fileID: 2125575149}
+    - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: trails.Array.data[3]
+      value: 
+      objectReference: {fileID: 584877955}
+    - target: {fileID: 2711700032691759625, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+        type: 3}
+      propertyPath: trails.Array.data[4]
+      value: 
+      objectReference: {fileID: 1626669948}
     - target: {fileID: 2711700032691759627, guid: ff65e5187c6e9344293b8c4c4e78cf92,
         type: 3}
       propertyPath: m_RootOrder
@@ -10499,19 +10724,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -63.42
       objectReference: {fileID: 0}
-    - target: {fileID: 8017015736525190909, guid: ff65e5187c6e9344293b8c4c4e78cf92,
+    - target: {fileID: 8158299256797912541, guid: ff65e5187c6e9344293b8c4c4e78cf92,
         type: 3}
-      propertyPath: m_Size.x
-      value: 4.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 8017015736525190909, guid: ff65e5187c6e9344293b8c4c4e78cf92,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8017015736525190909, guid: ff65e5187c6e9344293b8c4c4e78cf92,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8778564618865342967, guid: ff65e5187c6e9344293b8c4c4e78cf92,

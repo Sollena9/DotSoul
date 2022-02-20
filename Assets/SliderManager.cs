@@ -21,6 +21,8 @@ public class SliderManager : MonoBehaviour
         curruntValue[2] = sp.maxValue;
     }
 
+   
+
     public void ResourceManager(int value, float point)
     {
 
