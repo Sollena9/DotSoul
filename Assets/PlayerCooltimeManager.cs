@@ -63,7 +63,7 @@ public class PlayerCooltimeManager : MonoBehaviour
 
     }
 
-    IEnumerator Cooltime(int num)
+    private IEnumerator Cooltime(int num)
     {
 
         while (skillFilter[num].fillAmount > 0)
@@ -79,7 +79,7 @@ public class PlayerCooltimeManager : MonoBehaviour
     }
 
     //남은 쿨타임을 계산할 코르틴을 만들어줍니다.
-    IEnumerator CoolTimeCounter(int num)
+    private IEnumerator CoolTimeCounter(int num)
     {
 
         while (currentCoolTime[num] > 0)

@@ -5,16 +5,17 @@ using UnityEngine;
 public class DropItemInfo : MonoBehaviour
 {
 
-    public List<int> itemNum = new List<int>();
+    public List<int> itemData = new List<int>();
     public List<int> itemCount = new List<int>();
     public bool check  = true;
 
 
     private void Start()
     {
-        check = GameManager.instance.GetItems(itemNum, itemCount);
+        check = GameManager.instance.GetItems(itemData, itemCount);
 
         Debug.Log(check);
+        //itemList 라이브러리(Enemy같이) 만들어서 itemData에 입력
     }
 
 }

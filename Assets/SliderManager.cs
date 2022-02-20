@@ -14,9 +14,17 @@ public class SliderManager : MonoBehaviour
     private float pointSpeed;
 
 
+    private void Start()
+    {
+        curruntValue[0] = hp.maxValue;
+        curruntValue[1] = mp.maxValue;
+        curruntValue[2] = sp.maxValue;
+    }
+
+   
+
     public void ResourceManager(int value, float point)
     {
-
 
         switch (value)
         {
@@ -91,7 +99,7 @@ public class SliderManager : MonoBehaviour
                     if (mp.value >= mp.maxValue)
                         break;
 
-                    mp.value += 1 * Time.smoothDeltaTime * 50;
+                    mp.value += 100 * Time.smoothDeltaTime * 50;
                     Debug.Log(mp.value);
                     yield return null;
                     //InfiniteLoopDetector.Run();
@@ -107,7 +115,7 @@ public class SliderManager : MonoBehaviour
                     if (sp.value >= sp.maxValue)
                         break;
 
-                    sp.value += 1 * Time.smoothDeltaTime * 50;
+                    sp.value += 100 * Time.smoothDeltaTime * 50;
                     Debug.Log(sp.value);
                     yield return null;
                     //InfiniteLoopDetector.Run();

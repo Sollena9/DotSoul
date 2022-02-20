@@ -150,6 +150,7 @@ public class SystemManager : MonoBehaviour
     public virtual void FullRecovery()
     //hp, fp, sp 풀 회복 -> 정보 Load 후에 실행 해야함.
     {
+        //수정 필요 
         hp.value = hp.maxValue;
         fp.value = fp.maxValue;
         sp.value = sp.maxValue;

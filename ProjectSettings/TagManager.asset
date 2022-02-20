@@ -28,7 +28,7 @@ TagManager:
   - 
   - UI
   - 
-  - 
+  - PlayerWeapon
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3662238245
+    locked: 0
+  - name: Effect_Enviroment
+    uniqueID: 1392596405
     locked: 0
   - name: UI
     uniqueID: 1639996729

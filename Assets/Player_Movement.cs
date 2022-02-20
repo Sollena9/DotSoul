@@ -2,78 +2,78 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using SpriteTrail;
+
 
 public class Player_Movement : PlayerInfo
 {
-   public enum State
-    {
-        Idle, Walk, Jump, Attack, Guard, Guard_Walk, Estus, Estus_Walk, Dodge, Parry, Grab , Die
 
-    };
-
-    public State state;
-    public Transform pos;
-    public Vector2 boxSize;
-
+    public PlayerTag state;
     public bool playerFreeze;
 
     public Rigidbody2D rigid;
     public Animator anim;
     public Vector3 moveVelocity = Vector3.zero;
     
-    bool isJumping;
+    //bool isJumping;
 
     private PlayerCooltimeManager cooltimeManager;
     public GameObject attAngle;
     public bool isRightFace;
 
+    [SerializeField]
+    private SpriteRenderer[] things;
+
+    [SerializeField]
+    private SliderManager slide;
+
+
+
+
     private void Awake()
-    {   
-        state = State.Idle;
-
-    }
-
-    void Start()
     {
+        state = GetComponent<PlayerTag>();
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         cooltimeManager = GetComponent<PlayerCooltimeManager>();
-        isJumping = false;
+
         moveVelocity = Vector3.left;
-
-        StartCoroutine(LookChange());
-
-        var slide = FindObjectOfType<SliderManager>();
         slide.hp.maxValue = base.HP;
         slide.hp.value = base.HP;
 
     }
 
+   
 
     void Update()
     {
-        if(HP <= 0 && !(state == State.Die))
+        InputManager();
+
+        if (HP <= 0)
         {
             FindObjectOfType<SystemManager>().StartCoroutine("PrintYouDied");
 
-            state = State.Die;
             //anim.SetBool("Die", true);
         }
 
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.1f, transform.position.y),
             new Vector2(transform.position.x + 0.1f, transform.position.y ), whatIsGrounded);               //두줄 이어지는 코드
-            InputManager();
 
+        //if (!state.HasFlag(State._Combat)) slide.;
 
     }
 
     private void FixedUpdate()
     {
+        LookChange();
+
         if (isGrounded)
         {
-            anim.SetBool("Jump", false);
-            jumpcounter = 1;
+            //anim.SetBool("Jump", false);
+            jumpCounter = 1;
+            state.RemoveFlag(State._Jump);
         }
+
 
 
     }
@@ -81,15 +81,15 @@ public class Player_Movement : PlayerInfo
     private void Walk()
     {
 
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if (Input.GetAxisRaw("Horizontal") < 1)
         {
             moveVelocity = Vector3.left;
-            anim.SetInteger("MoveSpeed", -1);
+            anim.SetFloat("Move", 1);
         }
-        else if (Input.GetAxisRaw("Horizontal") > 0)
+        else if (Input.GetAxisRaw("Horizontal") > -1)
         {
             moveVelocity = Vector3.right;
-            anim.SetInteger("MoveSpeed", 1);
+            anim.SetFloat("Move", 1);
 
         }
 
@@ -101,266 +101,127 @@ public class Player_Movement : PlayerInfo
     }
     private void Jump()
     {
-        if (!isJumping)
+        if (!state.HasFlag(State._Jump))
             return;
-        StartCoroutine(BacktoIdle(State.Jump, 1f));
-        anim.SetBool("Jump", true);
         rigid.velocity = Vector2.zero;
         Vector2 jumpVelocity = new Vector2(0, jumpPower);
         rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
-        isJumping = false;
     }
 
-    private void Guard()
-    {
-        anim.SetBool("Guard", true);
-
-        DP = 100;
-
-    }
-
-    private void Guard_Walk()
-    {
-        anim.SetBool("Guard_Walk", true);
-
-        DP = 100;
-        movePower = guardMovePower;
-    }
-
-    private void Estus()
-    {
-        anim.SetBool("Estus", true);
-        movePower = guardMovePower;
-        HP += 50;
-    }
-
-    private void Estus_Walk()
-    {
-        anim.SetBool("Estus_Walk", true);
-
-        movePower = guardMovePower;
-        HP += 50;
-    }
-
-
-
-    private void Attack()
-    {
-        anim.SetTrigger("Attack");
-        StartCoroutine(BacktoIdle(State.Attack, 0.4f));
-
-        Collider2D[] col = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
-        foreach (Collider2D collider in col)
-        {
-
-            Debug.Log(collider.tag);
-            //공격
-            if (collider.gameObject.CompareTag("Enemy") && collider.GetComponent<EnemyInfo>().enemyState != EnemyInfo.State.Groggy)
-            {
-                //BacktoIdle(State.Attack, 1f);
-                //var enemyHp = collider.GetComponent<EnemyHp>();
-                //enemyHp.gameobject.setActive(true);
-                //enemyHp.hpvar.value -= attackpower;
-            }
-            //잡기
-            else if (collider.gameObject.tag == "Enemy" && collider.GetComponent<EnemyInfo>().enemyState == EnemyInfo.State.Groggy)
-            {
-                BacktoIdle(State.Grab, 10f);
-
-                if (collider.GetComponent<EnemyInfo>().enemyLevel > 0)
-                    anim.SetInteger("Grab", 1);
-                else
-                    anim.SetInteger("Grab", 0);
-
-            }
-
-        }
-
-
-
-    }
-
-    private IEnumerator BacktoIdle(State type, float time)
-    {
-        if(type == State.Dodge)
-        {
-            yield return new WaitForSecondsRealtime(0.5f);
-
-            playerFreeze = false;
-            rigid.velocity = new Vector2(0, 0);
-            yield return new WaitForSecondsRealtime(0.3f);
-
-            state = State.Idle;
-        }
-
-        else if(type == State.Attack)
-        {
-            yield return new WaitForSecondsRealtime(time);
-            state = State.Idle;
-        }
-
-        else if(type == State.Jump)
-        {
-            yield return new WaitForSecondsRealtime(time);
-            state = State.Idle;
-        }
-        else
-        {
-            state = State.Idle;
-        }
-    }
-
-
-    bool StateManager(State type)
+    private IEnumerator Estus()
     {
 
-        if (type == State.Attack && (state != State.Attack && state != State.Parry && state != State.Estus && state != State.Estus_Walk && state != State.Dodge))
+        if (base.estusHPCurruntCount != 0)
         {
-            state = type;
-            return true;
-        }
+            base.estusHPCurruntCount -= 1;
+            anim.Play("Estus");
+            movePower = guardMovePower;
 
-        else if (type == State.Parry && (state != State.Jump && state != State.Estus && state != State.Estus_Walk && state != State.Attack))
-        {
-            state = type;
-            return true;
-        }
+            slide.ResourceManager(0, +50f);
 
-        else if (type == State.Jump && (state != State.Estus && state != State.Estus_Walk && state != State.Guard_Walk && state != State.Guard))
-        {
-            state = type;
-            return true;
-        }
-
-        else if (type == State.Dodge && (state != State.Jump && state != State.Estus && state != State.Estus_Walk))
-        {
-            state = type;
-            return true;
-        }
-
-        else if (type == State.Walk && (state != State.Jump))
-        {
-            state = type;
-            return true;
+            yield return new WaitForSeconds(2f);
+            state.RemoveFlag(State._Estus);
+            movePower += guardMovePower;
         }
 
         else
-            state = State.Idle;
-            return false;
+            yield return null;
 
-        
+
 
     }
+
+    
+
+    /*
+    public void ReturnToidle(string param, float num)
+    {
+        Debug.Log("실행");
+        anim.SetFloat(param, num);
+    }
+
+    */
 
 
     void InputManager()
     {
 
-        if(state == State.Die)
-        {
-            return;
-        }
-
         //걷기
-        if (Input.GetAxisRaw("Horizontal") != 0 && !playerFreeze && StateManager(State.Walk))
+        if (Input.GetAxisRaw("Horizontal") != 0 && !playerFreeze)
         {
-            movePower = 10;
+            state.AddFlag(State._Move);
+            anim.SetFloat("idle", 0);
             Walk();
         }
 
         else if(Input.GetAxisRaw("Horizontal") == 0)
         {
-            anim.SetInteger("MoveSpeed", 0);
+            state.RemoveFlag(State._Move);
+            anim.SetFloat("Move", 0);
+            anim.SetFloat("idle", 1);
         }
-
-        if(Input.GetButtonUp("Horizontal"))
-        {
-            StartCoroutine(BacktoIdle(State.Walk, 0f));
-
-        }
-
-
-        //짬푸
-        if (Input.GetButtonDown("Jump") && jumpcounter > 0 && isGrounded )
-        {
-            isJumping = true;
-            StateManager(State.Jump);
-            jumpcounter = 0;
-            Jump();
-
-        }
-
-
-        //패링
-        if (Input.GetKey(KeyCode.Q) && StateManager(State.Parry) && cooltimeManager.canUseSkill[1])
-        {
-            Collider2D col = Physics2D.OverlapBox(pos.position, boxSize, 0);
-            if (col.gameObject.tag == "Enemy")
-            {
-                cooltimeManager.UseSkill(1);
-                Debug.Log("체크");
-            }
-
-        }
-
-
-        //공격
-        // 잡기 상태가 StateManager에서 혼돈와서 나중에 수정해야됨
-        if (Input.GetKeyDown(KeyCode.K) && StateManager(State.Attack))
-            Attack();
-       
 
         // 구르기
-        if (Input.GetKeyDown(KeyCode.Z) && StateManager(State.Dodge) && cooltimeManager.canUseSkill[0])
+        if (Input.GetKeyDown(KeyCode.Mouse1) && cooltimeManager.canUseSkill[0] && !state.HasFlag(State._Jump) && slide.sp.value > 0)
         {
-            cooltimeManager.UseSkill(0);
-            playerFreeze = true;
-            Physics2D.IgnoreLayerCollision(15, 16, true);
 
-            anim.SetTrigger("Roll");
-            rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
+            StartCoroutine(ExitRoll(0.5f));
 
-            StartCoroutine(BacktoIdle(State.Dodge, 0.5f));
         }
 
-        //가드/가드하고 걷기
-        if (Input.GetKeyUp(KeyCode.S))
+        //가드 해제
+        if (Input.GetKeyUp(KeyCode.K))
         {
+            state.RemoveFlag(State._Guard);
             anim.SetBool("Guard", false);
-        }
-        else if (Input.GetKeyDown(KeyCode.S) && state == State.Walk)
-        {
-            StateManager(State.Guard_Walk);
-            Guard_Walk();
+            base.movePower += base.guardMovePower;
         }
 
-        else if (Input.GetKeyDown(KeyCode.S) && state == State.Idle)
+        else if(Input.GetKey(KeyCode.K))
         {
-            StateManager(State.Guard);
-            Guard();
+            anim.SetBool("Guard", true);
+            if(!state.HasFlag(State._Guard))            base.movePower -= base.guardMovePower;
+            state.AddFlag(State._Guard);
         }
+
+
+
+         //짬푸
+         if (Input.GetButtonDown("Jump") && jumpCounter > 0 && isGrounded )
+         {
+             state.AddFlag(State._Jump);
+             jumpCounter = 0;
+             Jump();
+
+         }
 
 
         //에스트
+        if (Input.GetKeyDown(KeyCode.R))        StartCoroutine(Estus());
 
+        if (Input.GetKeyDown(KeyCode.L))
 
-        if (Input.GetKeyDown(KeyCode.R) && state != State.Idle)
         {
-            StateManager(State.Estus_Walk);
-            Estus_Walk();
-            StartCoroutine(StateChange(0.5f));
+            slide.ResourceManager(0, -50f);
         }
+        /*
 
-        else if (Input.GetKeyDown(KeyCode.R) && state != State.Walk)
-        {
-            StateManager(State.Estus);
-            Estus();
-            StartCoroutine(StateChange(0.5f));
-        }
+         //패링
+         if (Input.GetKey(KeyCode.Q)&& cooltimeManager.canUseSkill[1])
+         {
+             state.AddFlag(State._Parry);
+
+
+         }
+
+
+
+ 
+       */
 
     }
 
-
+    /*
     IEnumerator StateChange(float time)
     {
 
@@ -369,35 +230,102 @@ public class Player_Movement : PlayerInfo
         anim.SetBool("Estus", false);
 
     }
-
-    IEnumerator LookChange()
+    */
+    private void LookChange()
     {
-        if (Input.mousePosition.x < 960)
+        //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (playerFreeze)
+            return;
+
+        else if (Input.mousePosition.x <= 960)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             isRightFace = false;
         }
 
         else
-        { 
+        {
             transform.localScale = new Vector3(1, 1, 1);
             isRightFace = true;
         }
 
-        yield return new WaitForSecondsRealtime(0.1f);
-
-        StartCoroutine(LookChange());
+       
     }
 
-    private void ExitRoll()
+    IEnumerator ExitRoll(float time)
     {
+        //slide.ResourceManager(2, -100f);
+
+        foreach (SpriteRenderer sprite in things)
+        {
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+        }
+
+        state.AddFlag(State._Dodge);
+        cooltimeManager.UseSkill(0);
+        playerFreeze = true;
+        Physics2D.IgnoreLayerCollision(15, 16, true);
+
+
+        if (moveVelocity.x * transform.localScale.x == -1) RollStateSetUp(-1);
+        else if (moveVelocity.x * transform.localScale.x == 1) RollStateSetUp(1);
+
+        anim.SetTrigger("Roll");
+
+
+        rigid.velocity = new Vector2(moveVelocity.x * dodgePower, 0f);
+        //rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
+
+        foreach (SpriteTrail.SpriteTrail arry in trails)
+        {
+            arry.EnableTrail();
+        }
+
+
+        yield return new WaitForSecondsRealtime(time);
+
+        state.RemoveFlag(State._Dodge);
         Physics2D.IgnoreLayerCollision(15, 16, false);
+        playerFreeze = false;
+        rigid.velocity = Vector2.zero;
+        RollStateSetUp(0);
+
+        foreach (SpriteRenderer sprite in things)
+        {
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 255);
+        }
+
+
+        foreach (SpriteTrail.SpriteTrail arry in trails)
+        {
+            arry.DisableTrail();
+        }
+
     }
 
-    private void OnDrawGizmos()
+
+
+    public void StateChanger(bool value, State con)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(pos.position, boxSize);
+        if (value)
+            state.AddFlag(con);
+        else
+            state.RemoveFlag(con);
     }
+
+    private void RollStateSetUp(int vector)
+    {
+        if (vector == 0)
+        { 
+            anim.SetFloat("RollDirection_Left", 0);
+            anim.SetFloat("RollDirection_Right", 0);
+        }
+        else if(vector == 1)    anim.SetFloat("RollDirection_Right", 1);
+        else if (vector == -1)  anim.SetFloat("RollDirection_Left", 1);
+
+    }
+
+
 
 }

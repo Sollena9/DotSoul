@@ -21,12 +21,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  Texture: {fileID: 2800000, guid: 108f0449e61e3b843a59521a01a716ac, type: 3}
+  Texture: {fileID: 0}
   weaponName: "\uC9C1\uAC80"
   weaponNum: 0
   description: "\uAE30\uBCF8 \uBB34\uAE30\uC774\uB2E4."
-  movePower: 10
-  detectRange: 47
+  hitBoxValue: {x: 0, y: 0}
+  hitBoxPosition: {fileID: 0}
   attackRange: 37
   attackDamage: 5
   attackCoolTime: 31.943937

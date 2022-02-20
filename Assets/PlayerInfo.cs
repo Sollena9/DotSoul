@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SpriteTrail;
 
 public class PlayerInfo : MonoBehaviour
 {
     public int Level;
-
-    public float[] statArray = new float[5];
-    //여기서부터 순서대로
 
     public float HP;
     public float FP;
     public float SP;
     public float movePower;
     public float jumpPower;
-    public int jumpcounter;
+    public int jumpCounter;
     public float dodgePower;
 
     public int estusMaxCount; // 최대 소유 가능한 에스트 HP+MP = 최대 개ㅅ
@@ -39,7 +37,8 @@ public class PlayerInfo : MonoBehaviour
     public bool eqipWeapon;
     public bool eqipShield;
 
-
+    [SerializeField]
+    protected SpriteTrail.SpriteTrail[] trails;
 
     //레벨업 시 스탯 증가 계수- HP, FP, SP, AP, MP, DP 순서
     public float[] increaseStat = new float[6];

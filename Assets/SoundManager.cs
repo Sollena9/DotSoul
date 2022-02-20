@@ -28,11 +28,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     public void PlaySound(string soundname)
     {

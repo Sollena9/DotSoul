@@ -317,7 +317,7 @@ public class Gundyr : MonoBehaviour
 
         private void ParryingChecker()
         {
-            if(player.state == Player_Movement.State.Parry)
+            if(true)//player.state == Player_Movement.State.Parry)패링
                 {
                     anim.SetBool("Groggy", true);
                     enemyInfo.enemyState = EnemyInfo.State.Groggy;
@@ -337,7 +337,6 @@ public class Gundyr : MonoBehaviour
             {
                 SliderManager slide = FindObjectOfType<SliderManager>();
                 slide.ResourceManager(1, attkDamage[attackCount -1]);
-                slide.StartCoroutine(slide.SliderAniamtion(1, attkDamage[attackCount -1]));
             }
             
         }
