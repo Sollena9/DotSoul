@@ -4,42 +4,31 @@ using System.Security.Cryptography;
 using UnityEngine;
 using SpriteTrail;
 
-
 public class Player_Movement : PlayerInfo
 {
 
-    public PlayerTag state;
     public bool playerFreeze;
 
-    public Rigidbody2D rigid;
-    public Animator anim;
     public Vector3 moveVelocity = Vector3.zero;
+
     
     //bool isJumping;
-
-    private PlayerCooltimeManager cooltimeManager;
     public GameObject attAngle;
     public bool isRightFace;
 
     [SerializeField]
     private SpriteRenderer[] things;
 
-    [SerializeField]
-    private SliderManager slide;
 
+    [SerializeField]
+    private SpriteTrail.SpriteTrail trail;
 
 
 
     private void Awake()
     {
-        state = GetComponent<PlayerTag>();
-        rigid = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        cooltimeManager = GetComponent<PlayerCooltimeManager>();
 
         moveVelocity = Vector3.left;
-        slide.hp.maxValue = base.HP;
-        slide.hp.value = base.HP;
 
     }
 
@@ -71,7 +60,6 @@ public class Player_Movement : PlayerInfo
         {
             //anim.SetBool("Jump", false);
             jumpCounter = 1;
-            state.RemoveFlag(State._Jump);
         }
 
 
@@ -96,36 +84,48 @@ public class Player_Movement : PlayerInfo
 
 
        // rigid.AddForce(moveVelocity * movePower * Time.fixedDeltaTime);
-        transform.position += moveVelocity * movePower * Time.deltaTime;
+        transform.position += moveVelocity * MoveSpeed * Time.deltaTime;
 
     }
     private void Jump()
     {
-        if (!state.HasFlag(State._Jump))
+
+        if (data.playerState != PlayerData.playerCombatState.Jump)
             return;
-        rigid.velocity = Vector2.zero;
-        Vector2 jumpVelocity = new Vector2(0, jumpPower);
-        rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
+        rb2d.velocity = Vector2.zero;
+        Vector2 jumpVelocity = new Vector2(0, data.jumpPower);
+        rb2d.AddForce(jumpVelocity, ForceMode2D.Impulse);
     }
 
-    private IEnumerator Estus()
+    private IEnumerator Estus(int value)
     {
-
-        if (base.estusHPCurruntCount != 0)
-        {
-            base.estusHPCurruntCount -= 1;
-            anim.Play("Estus");
-            movePower = guardMovePower;
-
-            slide.ResourceManager(0, +50f);
-
-            yield return new WaitForSeconds(2f);
-            state.RemoveFlag(State._Estus);
-            movePower += guardMovePower;
-        }
-
-        else
+        if (data.playerState != PlayerData.playerCombatState.Estus)
             yield return null;
+
+
+        switch(value)
+        {
+            case 0:
+                if (data.estusHPCurruntCount != 0)
+                {
+                    data.estusHPCurruntCount -= 1;
+                    anim.Play("Estus");
+                    MoveSpeed_Buff -= data.moveSpeed_Guard;
+                    slide.ResourceManager(0, +50f);
+
+                    yield return new WaitForSeconds(2f);
+                    data.playerState = PlayerData.playerCombatState.Idle;
+                    MoveSpeed_Buff += data.moveSpeed_Guard;
+                }
+                break;
+            case 1:
+                
+                break;
+            case 2:
+                break;
+        }
+        
+
 
 
 
@@ -147,41 +147,48 @@ public class Player_Movement : PlayerInfo
     {
 
         //걷기
-        if (Input.GetAxisRaw("Horizontal") != 0 && !playerFreeze)
+        if (Input.GetAxisRaw("Horizontal") != 0 && data.playerState != PlayerData.playerCombatState.Freeze)
         {
-            state.AddFlag(State._Move);
+            data.playerState = PlayerData.playerCombatState.Walk;
             anim.SetFloat("idle", 0);
             Walk();
         }
 
         else if(Input.GetAxisRaw("Horizontal") == 0)
         {
-            state.RemoveFlag(State._Move);
+            data.playerState = PlayerData.playerCombatState.Idle;
             anim.SetFloat("Move", 0);
             anim.SetFloat("idle", 1);
         }
 
         // 구르기
-        if (Input.GetKeyDown(KeyCode.Mouse1) && cooltimeManager.canUseSkill[0] && !state.HasFlag(State._Jump) && slide.sp.value > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-
-            StartCoroutine(ExitRoll(0.5f));
+            if (cooltimeManager.canUseSkill[0] && data.playerState != PlayerData.playerCombatState.Jump && slide.sp.value > 0)
+                StartCoroutine(ExitRoll(0.5f));
+            else
+                return;
 
         }
 
         //가드 해제
         if (Input.GetKeyUp(KeyCode.K))
         {
-            state.RemoveFlag(State._Guard);
+            if (data.playerState == PlayerData.playerCombatState.Guard)
+                MoveSpeed_Buff += data.moveSpeed_Guard;
+            data.playerState = PlayerData.playerCombatState.Idle;
             anim.SetBool("Guard", false);
-            base.movePower += base.guardMovePower;
         }
 
         else if(Input.GetKey(KeyCode.K))
         {
             anim.SetBool("Guard", true);
-            if(!state.HasFlag(State._Guard))            base.movePower -= base.guardMovePower;
-            state.AddFlag(State._Guard);
+            if(data.playerState != PlayerData.playerCombatState.Guard)
+                MoveSpeed_Buff -= data.moveSpeed_Guard;
+            data.playerState = PlayerData.playerCombatState.Guard;
+            Debug.Log(data.moveSpeed);
+            //가드 시 방어력 추가 해줘야 될까??
+
         }
 
 
@@ -189,35 +196,32 @@ public class Player_Movement : PlayerInfo
          //짬푸
          if (Input.GetButtonDown("Jump") && jumpCounter > 0 && isGrounded )
          {
-             state.AddFlag(State._Jump);
-             jumpCounter = 0;
-             Jump();
+            data.playerState = PlayerData.playerCombatState.Jump;
+            jumpCounter = 0;
+            Jump();
 
          }
 
 
         //에스트
-        if (Input.GetKeyDown(KeyCode.R))        StartCoroutine(Estus());
+        if (Input.GetKeyDown(KeyCode.R))        StartCoroutine(Estus(0));
 
-        if (Input.GetKeyDown(KeyCode.L))
-
-        {
-            slide.ResourceManager(0, -50f);
-        }
+        if (Input.GetKeyDown(KeyCode.L))        slide.ResourceManager(0, -50f);
         /*
 
          //패링
-         if (Input.GetKey(KeyCode.Q)&& cooltimeManager.canUseSkill[1])
+         if (Input.GetKey(KeyCode.Q))//&& cooltimeManager.canUseSkill[1])
          {
-             state.AddFlag(State._Parry);
+             //state.AddFlag(State._Parry);
+            anim.StopPlayback();
 
 
          }
 
 
-
+        */
  
-       */
+       
 
     }
 
@@ -262,7 +266,7 @@ public class Player_Movement : PlayerInfo
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
         }
 
-        state.AddFlag(State._Dodge);
+        data.playerState = PlayerData.playerCombatState.Roll;
         cooltimeManager.UseSkill(0);
         playerFreeze = true;
         Physics2D.IgnoreLayerCollision(15, 16, true);
@@ -274,21 +278,23 @@ public class Player_Movement : PlayerInfo
         anim.SetTrigger("Roll");
 
 
-        rigid.velocity = new Vector2(moveVelocity.x * dodgePower, 0f);
+        rb2d.velocity = new Vector2(moveVelocity.x * data.rollPower, 0f);
         //rigid.AddForce(moveVelocity * dodgePower, ForceMode2D.Impulse);
 
-        foreach (SpriteTrail.SpriteTrail arry in trails)
-        {
-            arry.EnableTrail();
-        }
+
+        trail.EnableTrail();
+        //foreach (SpriteTrail.SpriteTrail arry in trails)
+        //{
+        //    arry.EnableTrail();
+        //}
 
 
         yield return new WaitForSecondsRealtime(time);
 
-        state.RemoveFlag(State._Dodge);
+        data.playerState = PlayerData.playerCombatState.Idle;
         Physics2D.IgnoreLayerCollision(15, 16, false);
         playerFreeze = false;
-        rigid.velocity = Vector2.zero;
+        rb2d.velocity = Vector2.zero;
         RollStateSetUp(0);
 
         foreach (SpriteRenderer sprite in things)
@@ -296,23 +302,17 @@ public class Player_Movement : PlayerInfo
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 255);
         }
 
+        trail.DisableTrail();
 
-        foreach (SpriteTrail.SpriteTrail arry in trails)
-        {
-            arry.DisableTrail();
-        }
+        //foreach (SpriteTrail.SpriteTrail arry in trails)
+        //{
+        //    arry.DisableTrail();
+        //}
 
     }
 
 
 
-    public void StateChanger(bool value, State con)
-    {
-        if (value)
-            state.AddFlag(con);
-        else
-            state.RemoveFlag(con);
-    }
 
     private void RollStateSetUp(int vector)
     {

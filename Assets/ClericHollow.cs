@@ -157,19 +157,14 @@ public class ClericHollow : MonoBehaviour
         anim.SetInteger("Attack", attackKind);
         attackCooltime = attackCooltimeSave;
 
-        Collider2D[] col = Physics2D.OverlapBoxAll(attackPos.position, attackSize, 0);
-        foreach (Collider2D collider in col)
+        Collider2D col = Physics2D.OverlapBox(attackPos.position, attackSize, 0);
+
+        if (col.gameObject.tag == "Player")
         {
-
-            Debug.Log(collider.tag);
-
-            if (collider.gameObject.tag == "Player")
-            {
-                FindObjectOfType<SystemManager>().ChangeH_S_FP(0, -attkDamage);
-                Debug.Log(collider.gameObject.tag);
-            }
-
+            FindObjectOfType<SystemManager>().ChangeH_S_FP(0, -attkDamage);
+            col.gameObject.GetComponent<Animator>().SetTrigger("Hit");
         }
+
     }
 
     private void ClearAttackKind()

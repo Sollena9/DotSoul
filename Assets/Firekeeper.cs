@@ -63,12 +63,12 @@ public class Firekeeper : MonoBehaviour
     private void FirekeeperLevelUp()
     {
         var playerinfo = FindObjectOfType<PlayerInfo>();
-        if(levNeedSoul < playerinfo.Soul)
+        if(levNeedSoul < playerinfo.data.soul)
         {
             leveling = true;
             anim.SetBool("LevelUp", true);
-            playerinfo.PlayerLevelUp(levNeedSoul);
-            playerinfo.Soul -= (int)levNeedSoul;
+            playerinfo.PlayerLevelUp((int)levNeedSoul);
+            playerinfo.data.soul -= (int)levNeedSoul;
             IncreaseLevelUpSoul();
         }
 

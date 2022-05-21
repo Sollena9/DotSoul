@@ -12,7 +12,6 @@ public class EqipmentManager : MonoBehaviour
 
     public GameObject[] weponlist;
     public Player_Movement thePlayer;
-    public PlayerTag state;
 
     private bool comboPossible;
     private int comboStack;
@@ -23,20 +22,23 @@ public class EqipmentManager : MonoBehaviour
     private void Start()
     {
         thePlayer = GetComponent<Player_Movement>();
-        state = GetComponent<PlayerTag>();
 
-        if (GetComponent<PlayerInfo>().eqipWeapon)
+        /*if (GetComponent<PlayerInfo>().data.weaponState == PlayerData.playerWeaponState.Fist)
             EqipWeapon(0);
-
+            */
     }
 
 
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && (state.HasFlag(State._Idle) || state.HasFlag(State._Move)))
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Attack();
+            if (thePlayer.data.playerState == PlayerData.playerCombatState.Idle ||
+                thePlayer.data.playerState == PlayerData.playerCombatState.Walk)
+                Attack();
+            else
+                return;
         }
     }
 
@@ -45,7 +47,7 @@ public class EqipmentManager : MonoBehaviour
     //
     // 무기 아이템 습득 방식: 드롭 / 구매(재료 사용)
     //인벤토리 만들어야됨
-
+        
 
     void EqipWeapon(int weaponNum)
     {
@@ -65,8 +67,7 @@ public class EqipmentManager : MonoBehaviour
 
     public void Attack()
     {
-        thePlayer.StateChanger(true, State._Combat);
-        thePlayer.StateChanger(true, State._Attack);
+        thePlayer.data.playerState = PlayerData.playerCombatState.Attack_Normal;
 
         if (comboStack == 0)
         {
@@ -107,8 +108,7 @@ public class EqipmentManager : MonoBehaviour
     {
         comboPossible = false;
         comboStack = 0;
-        thePlayer.StateChanger(false, State._Combat);
-        thePlayer.StateChanger(false, State._Attack);
+        thePlayer.data.playerState = PlayerData.playerCombatState.Idle;
     }
 
 

@@ -3,63 +3,85 @@ using System.Collections.Generic;
 using UnityEngine;
 using SpriteTrail;
 
-public class PlayerInfo : MonoBehaviour
+public class PlayerInfo : Entity
 {
+
+    
+    
     public int Level;
 
-    public float HP;
-    public float FP;
-    public float SP;
-    public float movePower;
-    public float jumpPower;
-    public int jumpCounter;
-    public float dodgePower;
+    public override float MaxHP => data.HP + HP_Item + HP_Buff;
+    protected float HP_Item;
+    protected float HP_Buff;
 
-    public int estusMaxCount; // 최대 소유 가능한 에스트 HP+MP = 최대 개ㅅ
-    public int estusHPCurruntCount;
-    public int estusMPCurruntCount;
+    public override float MaxMP => data.MP + MP_Item + MP_Buff;
+    protected float MP_Item;
+    protected float MP_Buff;
 
- 
-    public float AP; //공격 데미지 계수
-    public float MP; //마법 데미지
+    public override float MaxSP => data.SP + SP_Item + SP_Buff;
+    protected float SP_Item;
+    protected float SP_Buff;
 
-    public float Soul;
+    public override float HPRecovery => data.HPRecovery + HPRecovery_Item + HPRecovery_Buff;
+    protected float HPRecovery_Item;
+    protected float HPRecovery_Buff;
 
-    public float DP; //Defense Point 그냥 방어력임
+    public override float MPRecovery => data.MPRecovery + MPRecovery_Item + MPRecovery_Buff;
+    protected float MPRecovery_Item;
+    protected float MPRecovery_Buff;
 
-    public float guardMovePower; // 가드 시 이동속도 감소되는 수치
+
+    public override float SPRecovery => data.SPRecovery + SPRecovery_Item + SPRecovery_Buff;
+    protected float SPRecovery_Item;
+    protected float SPRecovery_Buff;
+
+
+    public override float DP => data.DP + DP_Item + DP_Buff;
+    protected float DP_Item;
+    protected float DP_Buff;
+
+    public override float MoveSpeed => data.moveSpeed + MoveSpeed_Item + MoveSpeed_Buff;
+    protected float MoveSpeed_Item;
+    protected float MoveSpeed_Buff;
+
+    public override float Damage => data.attackDamage + Damage_Item + Damage_Buff;
+    protected float Damage_Item;
+    protected float Damage_Buff;
+
+
+    public override float HitRecoveryTime => data.hitRecovery + HitRecovery_Item + HitRecovery_Buff; // data.List[enemyNum].knockBacktime +
+    protected float HitRecovery_Item;
+    protected float HitRecovery_Buff;
+
 
     public LayerMask whatIsGrounded;
     public bool isGrounded;
    
-    public float[] skillCoolTime = new float[2];
+    private float[] skillCoolTime = new float[2];
 
-    public bool eqipWeapon;
-    public bool eqipShield;
 
+    protected int jumpCounter;
     [SerializeField]
     protected SpriteTrail.SpriteTrail[] trails;
+
+
+
 
     //레벨업 시 스탯 증가 계수- HP, FP, SP, AP, MP, DP 순서
     public float[] increaseStat = new float[6];
 
-    //public GameObject hp;
-    //public GameObject fp;
-    //public GameObject sp;
-    //HP 구현
 
-
-    public void PlayerLevelUp(float levNeedSoul)
+    public void PlayerLevelUp(int levNeedSoul)
     {
-        Soul -= levNeedSoul;
+        data.soul -= levNeedSoul;
 
         Level++;
-        HP += RandomAblityPointCalculator();
-        FP += RandomAblityPointCalculator();
+        //HP_Max += RandomAblityPointCalculator();
+        //FP += RandomAblityPointCalculator();
         SP += RandomAblityPointCalculator();
-        AP += RandomAblityPointCalculator();
+        //AP += RandomAblityPointCalculator();
         MP += RandomAblityPointCalculator();
-        DP += RandomAblityPointCalculator();
+        //DP += RandomAblityPointCalculator();
 
         //이펙트 출력
 
@@ -79,6 +101,41 @@ public class PlayerInfo : MonoBehaviour
     // 80일때 100/현재레벨 * 2 = 2
 
 
+
+
+    public override void TakeDamage(float damage)
+    {
+        //HP -= damage; //±âÁ¸ÄÚµå
+        HP -= Mathf.Clamp((damage * -1) + DP, 0, HP);
+        StartCoroutine(HitAnimation());
+    }
+
+    private IEnumerator HitAnimation()
+    {
+        Color color = sprite.color;
+
+        color.a = 0.2f;
+        sprite.color = color;
+
+        yield return new WaitForSeconds(0.3f);
+
+        color.a = 1;
+        sprite.color = color;
+    }
+
+    private void Awake()
+    {
+        SetUp();
+    }
+
+
+    public override IEnumerator HitRecovery(float time)
+    {
+
+        time = HitRecoveryTime + time;
+        yield return new WaitForSecondsRealtime(time);
+        rb2d.velocity = Vector3.zero;
+    }
 
 
 }

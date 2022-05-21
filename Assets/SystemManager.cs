@@ -48,7 +48,7 @@ public class SystemManager : MonoBehaviour
         startPosition = thePlayer.transform.position;
         fallCoroutine = FalldownChekcer();
 
-        saveSouls.text = thePlayer.Soul.ToString();
+        saveSouls.text = thePlayer.data.soul.ToString();
     }
 
     public virtual void RestartGame()
@@ -94,7 +94,6 @@ public class SystemManager : MonoBehaviour
 
         else if (dieNum >= 10)
         {
-            Debug.Log("22");
             youDiedUI.transform.localScale = new Vector3(0, 0, 0);
             youDiedUI.gameObject.SetActive(false);
             RestartGame();
@@ -122,17 +121,17 @@ public class SystemManager : MonoBehaviour
         {
             case 0:
                 hp.value += value;
-                thePlayer.HP = hp.value;
+                //thePlayer.HP = hp.value;
                 break;
 
             case 1:
                 fp.value += value;
-                thePlayer.FP = fp.value;
+                //thePlayer.FP = fp.value;
                 break;
 
             case 2:
                 sp.value += value;
-                thePlayer.SP = sp.value;
+                thePlayer.data.SP = sp.value;
                 break;
         }
 
@@ -161,44 +160,7 @@ public class SystemManager : MonoBehaviour
 
 
 
-    public void SaveGame()
-    {
-        //PlayerPrefs.SetString("PlayerName", ??);
-        //PlayerPrefs.SetInt("BonFireID", ??);
-        PlayerPrefs.SetInt("Level", thePlayer.Level);
-        PlayerPrefs.SetFloat("Soul", thePlayer.Soul);
-        PlayerPrefs.SetFloat("PlayerHP", thePlayer.HP);
-        PlayerPrefs.SetFloat("PlayerFP", thePlayer.FP);
-        PlayerPrefs.SetFloat("PlayerSP", thePlayer.SP);
-
-        PlayerPrefs.SetFloat("MovePower", thePlayer.movePower);
-        PlayerPrefs.SetFloat("JumpPower", thePlayer.jumpPower);
-        PlayerPrefs.SetFloat("PlayerAP", thePlayer.AP);
-        PlayerPrefs.SetFloat("PlayerMP", thePlayer.MP);
-        PlayerPrefs.SetFloat("PlayerDP", thePlayer.DP);
-        PlayerPrefs.SetFloat("GuradMovePower", thePlayer.guardMovePower);
-
-
-    }
-
-    public void LoadGame()
-    {
-        //?? = PlayerPrefs.GetInt("BonFireID");
-        thePlayer.Level = PlayerPrefs.GetInt("Level");
-        thePlayer.Soul = PlayerPrefs.GetFloat("Soul");
-        thePlayer.HP = PlayerPrefs.GetFloat("PlayerHP");
-        thePlayer.FP = PlayerPrefs.GetFloat("PlayerFP");
-        thePlayer.SP = PlayerPrefs.GetFloat("PlayerSP");
-
-        thePlayer.movePower = PlayerPrefs.GetFloat("MovePower");
-        thePlayer.jumpPower = PlayerPrefs.GetFloat("JumpPower");
-        thePlayer.AP = PlayerPrefs.GetFloat("PlayerAP");
-        thePlayer.MP = PlayerPrefs.GetFloat("PlayerMP");
-        thePlayer.DP = PlayerPrefs.GetFloat("PlayerDP");
-        thePlayer.guardMovePower = PlayerPrefs.GetFloat("GuradMovePower");
-
-    }
-
+   
 
     public void IndecreaseSoul(float souls)
     {
@@ -211,7 +173,7 @@ public class SystemManager : MonoBehaviour
 
         StartCoroutine(SoulText(1));
         //addSoul의 크기 변환 // +1 은 크게
-        StartCoroutine(SoulCalculate(thePlayer.Soul + getSouls, thePlayer.Soul));
+        StartCoroutine(SoulCalculate(thePlayer.data.soul + getSouls, thePlayer.data.soul));
         //증감하는 소울의 양을 계산
     }
 
@@ -272,7 +234,7 @@ public class SystemManager : MonoBehaviour
 
         StartCoroutine(SoulText(-1)); //addSouls의 크기를 줄임
         current = target; //현재 소울을 원래 지정된 값으로 맞춤
-        thePlayer.Soul = current; //현재 소울을 실제 내가 가진 소울 변수에 대입함
+        thePlayer.data.soul = (int)current; //현재 소울을 실제 내가 가진 소울 변수에 대입함
         getSouls = 0; //증감할 소울 0으로 초기화함
         addSouls.gameObject.SetActive(false); //증감이 끝났기 때문에 Active를 false로 변경함
         saveSouls.text = ((int)current).ToString("0"); //지정된 값으로 맞춰진 현재 소울을 정수로 바꾸고 그걸 문자열로 바꾸고 그걸 소울 UI에 대입함

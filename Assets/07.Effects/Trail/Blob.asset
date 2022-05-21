@@ -47,7 +47,7 @@ MonoBehaviour:
   m_TrailMaxLength: 10
   m_TrailDuration: 0.15
   m_TrailElementSpawnCondition: 0
-  m_TimeBetweenSpawns: 0.7
+  m_TimeBetweenSpawns: 0.2
   m_FramesBetweenSpawns: 0
   m_DistanceBetweenSpawns: 0.225
   m_DistanceCorrection: 1

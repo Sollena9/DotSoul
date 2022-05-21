@@ -32,8 +32,8 @@ public class EstusSoup : MonoBehaviour
         {
             anim.SetInteger("Drink", +1);
             var player = col.gameObject.GetComponent<PlayerInfo>();
-            player.HP += 50;
-            Debug.Log(player.HP);
+            //player.HP += player.estusHPCurruntCount;
+            //Debug.Log(player.HP);
             popUpState = true;
             estusPopUpUi.gameObject.SetActive(false);
         }

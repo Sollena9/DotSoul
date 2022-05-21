@@ -22,23 +22,21 @@ public class PlayerCooltimeManager : MonoBehaviour
 
     private void Start()
     {
-       
-        for(int i = 0; i < canUseSkill.Length; i++)
-        {
 
-            //coolTimeCounter[i] = skillFilter[i].transform.GetChild(i).GetComponent<TextMeshProUGUI>();
-
-            skillFilter[i].fillAmount = 0; //처음에 스킬 버튼을 가리지 않음
-            canUseSkill[i] = true;
-            var time = GetComponent<Player_Movement>().skillCoolTime[i];
-            coolTime[i] = time;
-            currentCoolTime[i] = time;
-
-        }
+        SetSkill();
 
 
 
     }
+    public void SetSkill()
+    {
+        skillFilter[0].fillAmount = 0; //처음에 스킬 버튼을 가리지 않음
+        canUseSkill[0] = true;
+        var time = GetComponent<Player_Movement>().data.coolTime_Roll;
+        coolTime[0] = time;
+        currentCoolTime[0] = time;
+    }
+
 
     public void UseSkill(int num)
     {
