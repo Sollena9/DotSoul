@@ -6,7 +6,8 @@ using SpriteTrail;
 public class PlayerInfo : Entity
 {
 
-    
+    private PlayerState[] states;
+    private PlayerState curruntStates;
     
     public int Level;
 
@@ -55,12 +56,11 @@ public class PlayerInfo : Entity
 
 
     public LayerMask whatIsGrounded;
-    public bool isGrounded;
+
    
     private float[] skillCoolTime = new float[2];
 
 
-    protected int jumpCounter;
     [SerializeField]
     protected SpriteTrail.SpriteTrail[] trails;
 
@@ -103,11 +103,12 @@ public class PlayerInfo : Entity
 
 
 
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(float damage, float stiffness)
     {
         //HP -= damage; //±âÁ¸ÄÚµå
         HP -= Mathf.Clamp((damage * -1) + DP, 0, HP);
         StartCoroutine(HitAnimation());
+        StartCoroutine(HitRecovery(stiffness));
     }
 
     private IEnumerator HitAnimation()
@@ -123,19 +124,82 @@ public class PlayerInfo : Entity
         sprite.color = color;
     }
 
-    private void Awake()
-    {
-        SetUp();
-    }
+
 
 
     public override IEnumerator HitRecovery(float time)
     {
-
+        
         time = HitRecoveryTime + time;
         yield return new WaitForSecondsRealtime(time);
         rb2d.velocity = Vector3.zero;
     }
 
+    public override void Updated()
+    {
+        Debug.Log(curruntStates);
+    }
+
+    public override void LookChange()
+    {
+        //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (playerFreeze)
+            return;
+
+        else if (Input.mousePosition.x <= 960)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            isRightFace = false;
+        }
+
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            isRightFace = true;
+        }
+
+
+    }
+
+
+    public override void SetUp()
+    {
+        states = new PlayerState[2];
+        states[(int)PlayerStates.idle] = new PlayerOwnedStates.Idle();
+        states[(int)PlayerStates.Move] = new PlayerOwnedStates.Move();
+
+
+        //ChangeState(PlayerStates);
+        HP = MaxHP;
+        MP = MaxMP;
+        SP = MaxSP;
+        if (HPRecovery > 0)
+            StartCoroutine(Recovery());
+
+        slide.hp.maxValue = HP;
+        slide.hp.value = HP;
+
+        transform.rotation = new Quaternion(0, 0, 0, 0);
+        ChangeState(PlayerStates.idle);
+
+    }
+
+    public void ChangeState(PlayerStates newState)
+    {
+        //새로 바꾸려는 상태가 없으면 상태를 바꾸지 않음
+        if (states[(int)newState] == null)
+            return;
+
+        // 현재 재생중인 상태의 Exit 호출 
+        if (curruntStates != null)
+            curruntStates.Exit(this);
+
+        //새로운 상태로 변경하고 새로바뀐 상태의 Enter 호출
+        curruntStates = states[(int)newState];
+        curruntStates.Enter(this);
+
+        Debug.Log("asdf");
+    }
 
 }

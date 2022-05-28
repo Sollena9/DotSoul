@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerStates { idle = 0, Move, Jump, Air, Attack_normal, Attack_Strike, Skill, Roll, Guard, Estus, Counter };
+
+
 public abstract class Entity : MonoBehaviour
 {
+
     public PlayerData data;
 
     //HP 정보  0 ~ MaxHp 사이 값을 넘어 갈 수 없도록 설정
@@ -38,6 +42,11 @@ public abstract class Entity : MonoBehaviour
     public abstract float DP { get; }
     public abstract float HitRecoveryTime { get; }
 
+    public bool isRightFace;
+    public bool playerFreeze;
+    public bool isAir;
+    public int jumpCounter;
+    public bool isGrounded;
 
     [SerializeField]
     protected SliderManager slide;
@@ -46,25 +55,11 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected Rigidbody2D rb2d;
     [SerializeField]
-    protected Animator anim;
+    public Animator anim;
     [SerializeField]
     protected PlayerCooltimeManager cooltimeManager;
 
 
-    protected void SetUp()
-    {
-        HP = MaxHP;
-        MP = MaxMP;
-        SP = MaxSP;
-        if (HPRecovery > 0)
-            StartCoroutine(Recovery());
-
-        slide.hp.maxValue = HP;
-        slide.hp.value = HP;
-
-        transform.rotation = new Quaternion(0, 0, 0, 0);
-
-    }
 
     protected IEnumerator Recovery()
     {
@@ -77,12 +72,18 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    public abstract void TakeDamage(float damage);
+    public abstract void TakeDamage(float damage, float stiffness);
     //public abstract void PrintDamageText(float damage);
 
     public abstract IEnumerator HitRecovery(float time);
 
 
+    public abstract void Updated();
+
+
+    public abstract void LookChange();
+
+    public abstract void SetUp();
 
 
 }

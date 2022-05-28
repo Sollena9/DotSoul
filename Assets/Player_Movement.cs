@@ -4,17 +4,16 @@ using System.Security.Cryptography;
 using UnityEngine;
 using SpriteTrail;
 
+
 public class Player_Movement : PlayerInfo
 {
 
-    public bool playerFreeze;
 
     public Vector3 moveVelocity = Vector3.zero;
 
     
     //bool isJumping;
     public GameObject attAngle;
-    public bool isRightFace;
 
     [SerializeField]
     private SpriteRenderer[] things;
@@ -29,21 +28,19 @@ public class Player_Movement : PlayerInfo
     {
 
         moveVelocity = Vector3.left;
-
+        SetUp();
     }
 
    
 
     void Update()
     {
+        Updated();
+
+
         InputManager();
 
-        if (HP <= 0)
-        {
-            FindObjectOfType<SystemManager>().StartCoroutine("PrintYouDied");
-
-            //anim.SetBool("Die", true);
-        }
+        
 
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.1f, transform.position.y),
             new Vector2(transform.position.x + 0.1f, transform.position.y ), whatIsGrounded);               //두줄 이어지는 코드
@@ -56,11 +53,7 @@ public class Player_Movement : PlayerInfo
     {
         LookChange();
 
-        if (isGrounded)
-        {
-            //anim.SetBool("Jump", false);
-            jumpCounter = 1;
-        }
+
 
 
 
@@ -235,27 +228,7 @@ public class Player_Movement : PlayerInfo
 
     }
     */
-    private void LookChange()
-    {
-        //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (playerFreeze)
-            return;
-
-        else if (Input.mousePosition.x <= 960)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-            isRightFace = false;
-        }
-
-        else
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-            isRightFace = true;
-        }
-
-       
-    }
 
     IEnumerator ExitRoll(float time)
     {
