@@ -435,16 +435,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 09482819be3964d7883e23c6cdd7e0c7, type: 2}
+  isRightFace: 0
+  playerFreeze: 0
+  isAir: 0
+  jumpCounter: 0
+  isGrounded: 0
   slide: {fileID: 0}
   sprite: {fileID: 0}
   rb2d: {fileID: 4676228002698192404}
   anim: {fileID: 2711700032691759629}
+  movement: {fileID: 2711700032691759625}
   cooltimeManager: {fileID: 1056724681165638344}
   Level: 1
   whatIsGrounded:
     serializedVersion: 2
     m_Bits: 16384
-  isGrounded: 0
   trails: []
   increaseStat:
   - 0
@@ -453,10 +458,8 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  playerFreeze: 0
   moveVelocity: {x: 0, y: 0, z: 0}
   attAngle: {fileID: 0}
-  isRightFace: 0
   things:
   - {fileID: 3351612401927880263}
   - {fileID: 3067393530204724776}

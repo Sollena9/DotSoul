@@ -5,7 +5,7 @@ using RotaryHeart.Lib.SerializableDictionary;
 using RotaryHeart.Lib;
 using DG.Tweening;
 
-public class Gundyr : MonoBehaviour
+public class Gundyr : EnemyInfo
 {
 
     public string enemyName;
@@ -59,8 +59,9 @@ public class Gundyr : MonoBehaviour
         anim = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();
         player = FindObjectOfType<Player_Movement>();
-        
-        enemyInfo.enemyState = EnemyInfo.State.Idle;
+
+
+        ChangeState(EnemyStates.idle);
 
 
         //StartCoroutine(enemyStateManager());
@@ -85,7 +86,7 @@ public class Gundyr : MonoBehaviour
 
     private void FixedUpdate()
     {
-            //Debug.Log(enemyInfo.enemyState);
+            //Debug.Log(enemyState);
 
         if (!death)
         {
@@ -134,10 +135,10 @@ public class Gundyr : MonoBehaviour
                     anim.SetBool("JumpDashAttack", true);
                     //포물선 공식
                 }*/
-        if (playerDistance <= attackRange && canUseSkill && enemyInfo.enemyState != EnemyInfo.State.Skill)
+        if (playerDistance <= attackRange && canUseSkill && curruntStates != states[3]) // 스킬이 아니면 
         {
             canUseSkill = false;
-            enemyInfo.enemyState = EnemyInfo.State.Skill;
+            ChangeState(EnemyStates.Skill);
             StartCoroutine(AttackCoolTimeCalc());
             Attack();
 
@@ -157,8 +158,8 @@ public class Gundyr : MonoBehaviour
 
     yield return new WaitForSeconds(1f);
     StartCoroutine(enemyStateManager());
-    if(enemyInfo.enemyState != EnemyInfo.State.Skill && enemyInfo.enemyState != EnemyInfo.State.Attack)
-        enemyInfo.enemyState = EnemyInfo.State.Follow;
+        if (curruntStates != states[3] && curruntStates != states[2]) // 스킬과 어택이 아니면 
+            ChangeState(EnemyStates.idle); // follow로 바꿔야됨
             
     }
 
@@ -202,7 +203,8 @@ public class Gundyr : MonoBehaviour
                 {
                     attackCount = 1;
                     anim.SetInteger("Attack", 0);
-                    enemyInfo.enemyState = EnemyInfo.State.Idle;
+                    ChangeState(EnemyStates.idle);
+
                     break;
                 }
                 else
@@ -217,8 +219,9 @@ public class Gundyr : MonoBehaviour
                     {
                         attackCount = 1;
                         anim.SetInteger("Attack", 0);
-                        enemyInfo.enemyState = EnemyInfo.State.Idle;
-                        break;
+                    ChangeState(EnemyStates.idle);
+
+                    break;
                     }
 
                 else
@@ -228,7 +231,7 @@ public class Gundyr : MonoBehaviour
             default:
                 attackCount = 1;
                 anim.SetInteger("Attack", 0);
-                enemyInfo.enemyState = EnemyInfo.State.Idle;
+                ChangeState(EnemyStates.idle);
                 break;
 
         }
@@ -320,7 +323,7 @@ public class Gundyr : MonoBehaviour
             if(true)//player.state == Player_Movement.State.Parry)패링
                 {
                     anim.SetBool("Groggy", true);
-                    enemyInfo.enemyState = EnemyInfo.State.Groggy;
+                    ChangeState(EnemyStates.Groggy);
                     Debug.Log("Parry Success");
                     //behaviorNum = 4;  
                     //StopCoroutine(enemyStateManager());

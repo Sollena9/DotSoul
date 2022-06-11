@@ -38,7 +38,7 @@ public class Player_Movement : PlayerInfo
         Updated();
 
 
-        InputManager();
+        //InputManager();
 
         
 
@@ -51,7 +51,7 @@ public class Player_Movement : PlayerInfo
 
     private void FixedUpdate()
     {
-        LookChange();
+        //LookChange();
 
 
 
@@ -59,7 +59,7 @@ public class Player_Movement : PlayerInfo
 
     }
 
-    private void Walk()
+    public void Walk()
     {
 
         if (Input.GetAxisRaw("Horizontal") < 1)
@@ -124,7 +124,7 @@ public class Player_Movement : PlayerInfo
 
     }
 
-    
+
 
     /*
     public void ReturnToidle(string param, float num)
@@ -135,6 +135,19 @@ public class Player_Movement : PlayerInfo
 
     */
 
+    public void InputTest()
+    {
+        if (Input.GetAxisRaw("Horizontal") != 0 && curruntStates != states[(int)PlayerStates.Move])
+            ChangeState(PlayerStates.Move);
+        else if (Input.GetAxisRaw("Horizontal") == 0 && curruntStates != states[(int)PlayerStates.idle])
+            ChangeState(PlayerStates.idle);
+
+        if(Input.GetKeyDown(KeyCode.Mouse1) )
+        {
+
+        }
+
+    }
 
     void InputManager()
     {
@@ -225,21 +238,19 @@ public class Player_Movement : PlayerInfo
         yield return new WaitForSeconds(time);
         anim.SetBool("Estus_Walk", false);
         anim.SetBool("Estus", false);
-
+            
     }
     */
 
 
-    IEnumerator ExitRoll(float time)
+    public IEnumerator ExitRoll(float time)
     {
-        //slide.ResourceManager(2, -100f);
 
         foreach (SpriteRenderer sprite in things)
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
         }
 
-        data.playerState = PlayerData.playerCombatState.Roll;
         cooltimeManager.UseSkill(0);
         playerFreeze = true;
         Physics2D.IgnoreLayerCollision(15, 16, true);
@@ -276,11 +287,9 @@ public class Player_Movement : PlayerInfo
         }
 
         trail.DisableTrail();
+        ChangeState(PlayerStates.idle);
 
-        //foreach (SpriteTrail.SpriteTrail arry in trails)
-        //{
-        //    arry.DisableTrail();
-        //}
+  
 
     }
 

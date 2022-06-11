@@ -7,7 +7,9 @@ namespace PlayerOwnedStates
     {
         public override void Enter(Entity entity) // 시작할때 1번
         {
+            entity.anim.SetFloat("idle", 1);
             entity.anim.Play("idle");
+            entity.isCombat = false;
 
             if (entity.isGrounded)
                 entity.jumpCounter = 1;
@@ -17,7 +19,7 @@ namespace PlayerOwnedStates
         public override void Execute(Entity entity) // 매 프레임
         {
             entity.LookChange();
-
+            entity.movement.InputTest();
 
         }
 
@@ -32,7 +34,8 @@ namespace PlayerOwnedStates
     {
         public override void Enter(Entity entity) // 시작할때 1번
         {
-            entity.anim.Play("idle");
+            entity.anim.SetFloat("idle", 0);
+            entity.isCombat = false;
 
             if (entity.isGrounded)
                 entity.jumpCounter = 1;
@@ -42,12 +45,14 @@ namespace PlayerOwnedStates
 
         public override void Execute(Entity entity) // 매 프레임
         {
-
+            entity.movement.InputTest();
+            entity.movement.Walk();
 
         }
 
         public override void Exit(Entity entity) // 나갈때 1번 
-        {
+        {   
+            entity.anim.SetFloat("Move", 0);
 
         }
     }
@@ -57,6 +62,7 @@ namespace PlayerOwnedStates
         public override void Enter(Entity entity) // 시작할때 1번
         {
             entity.anim.Play("Jump");
+            entity.isCombat = false;
 
             if (entity.isGrounded)
                 entity.jumpCounter = 0;
@@ -72,6 +78,29 @@ namespace PlayerOwnedStates
         public override void Exit(Entity entity) // 나갈때 1번 
         {
 
+        }
+    }
+
+    public class Roll : PlayerState
+    {
+        public override void Enter(Entity entity) // 시작할때 1번
+        {
+            entity.isCombat = true;
+            entity.movement.StartCoroutine(entity.movement.ExitRoll(0.5f));
+
+
+
+        }
+
+        public override void Execute(Entity entity) // 매 프레임
+        {
+
+
+        }
+
+        public override void Exit(Entity entity) // 나갈때 1번 
+        {
+            entity.isCombat = false;
         }
     }
 

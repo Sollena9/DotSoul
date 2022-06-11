@@ -6,8 +6,8 @@ using SpriteTrail;
 public class PlayerInfo : Entity
 {
 
-    private PlayerState[] states;
-    private PlayerState curruntStates;
+    protected PlayerState[] states;
+    protected PlayerState curruntStates;
     
     public int Level;
 
@@ -138,6 +138,7 @@ public class PlayerInfo : Entity
     public override void Updated()
     {
         Debug.Log(curruntStates);
+        curruntStates.Execute(this);
     }
 
     public override void LookChange()
@@ -172,7 +173,7 @@ public class PlayerInfo : Entity
 
         //ChangeState(PlayerStates);
         HP = MaxHP;
-        MP = MaxMP;
+        MP = MaxMP; 
         SP = MaxSP;
         if (HPRecovery > 0)
             StartCoroutine(Recovery());
@@ -187,6 +188,8 @@ public class PlayerInfo : Entity
 
     public void ChangeState(PlayerStates newState)
     {
+
+        Debug.Log("ChangeState: " + newState);
         //새로 바꾸려는 상태가 없으면 상태를 바꾸지 않음
         if (states[(int)newState] == null)
             return;
@@ -198,8 +201,32 @@ public class PlayerInfo : Entity
         //새로운 상태로 변경하고 새로바뀐 상태의 Enter 호출
         curruntStates = states[(int)newState];
         curruntStates.Enter(this);
-
-        Debug.Log("asdf");
     }
 
+
+
+
+    public override void SetEngage()
+    {
+        isCombat = true;
+        StartCoroutine(EngageCalc());
+
+    }
+
+    IEnumerator EngageCalc()
+    {
+
+        yield return new WaitForSecondsRealtime(engageTime);
+        if (engageCounter >= 1 || isCombat == true)
+            StartCoroutine(EngageCalc());
+    }
+
+    public override void GetOffEngage()
+    {
+        StopCoroutine(EngageCalc());
+        isCombat = false;
+
+    }
+
+    //딜레이 없이 공격 상태변화 가능 약 > 강 // 강 > 특공 등 ... 
 }

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerStates { idle = 0, Move, Jump, Air, Attack_normal, Attack_Strike, Skill, Roll, Guard, Estus, Counter };
+public enum EnemyStates { idle = 0, Move, Jump, Air, Grabed, Skill, Guard, Countered, Hit, Groggy };
 
 
-public abstract class Entity : MonoBehaviour
+public abstract class Entity_Enemy : MonoBehaviour
 {
 
     public PlayerData data;
@@ -22,19 +22,19 @@ public abstract class Entity : MonoBehaviour
         set => data.MP = Mathf.Clamp(value, 0, MaxMP);
         get => data.MP;
     }
-    public float SP
-    {
-        set => data.SP = Mathf.Clamp(value, 0, MaxSP);
-        get => data.SP;
-    }
+    //public float SP
+    //{
+    //    set => data.SP = Mathf.Clamp(value, 0, MaxSP);
+    //    get => data.SP;
+    //}
 
     //추상 클래스로 정의하여 파생 클래스에서 정의
     public abstract float MaxHP { get; }
     public abstract float HPRecovery { get; }
     public abstract float MaxMP { get; }
     public abstract float MPRecovery { get; }
-    public abstract float MaxSP { get; }
-    public abstract float SPRecovery { get; }
+    //public abstract float MaxSP { get; }
+    //public abstract float SPRecovery { get; }
 
     public abstract float MoveSpeed { get; }
     public abstract float Damage { get; }
@@ -44,13 +44,9 @@ public abstract class Entity : MonoBehaviour
 
 
     public bool isRightFace;
-    public bool playerFreeze;
-    public bool isAir;
-    public int jumpCounter;
     public bool isGrounded;
     public bool isCombat;
-    protected float engageTime = 10f;
-    public int engageCounter = 0;
+    public bool isAggro;
     public float curruntEngegeTime = 0f;
 
     [SerializeField]
@@ -65,6 +61,8 @@ public abstract class Entity : MonoBehaviour
     public Player_Movement movement;
     [SerializeField]
     protected PlayerCooltimeManager cooltimeManager;
+    [SerializeField]
+    protected PlayerInfo thePlayer;
 
 
 
@@ -73,8 +71,8 @@ public abstract class Entity : MonoBehaviour
         while (true)
         {
             if (HP < MaxHP) HP += HPRecovery;
-            if (MP < MaxMP) MP += MPRecovery;
-            if (SP < MaxSP) SP += SPRecovery; // 전투 중 회복 X 추가해야됨
+            //if (MP < MaxMP) MP += MPRecovery;
+            //if (SP < MaxSP) SP += SPRecovery; // 전투 중 회복 X 추가해야됨
             yield return new WaitForSeconds(1f);
         }
     }
@@ -95,6 +93,5 @@ public abstract class Entity : MonoBehaviour
     public abstract void SetEngage();
 
     public abstract void GetOffEngage();
-
 
 }
