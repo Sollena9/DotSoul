@@ -219,6 +219,8 @@ public class PlayerInfo : Entity
         yield return new WaitForSecondsRealtime(engageTime);
         if (engageCounter >= 1 || isCombat == true)
             StartCoroutine(EngageCalc());
+        else
+            GetOffEngage();
     }
 
     public override void GetOffEngage()

@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyStates { idle = 0, Move, Jump, Air, Grabed, Skill, Guard, Countered, Hit, Groggy };
+public enum EnemyStates { idle = 0, Move, Jump, Run, Air, Laddered ,Grabed, Skill, Guard, Hit, Groggy, Die,
+                          evaseStep  };
 
 
 public abstract class Entity_Enemy : MonoBehaviour
 {
 
-    public PlayerData data;
+    public EnemyData data;
 
     //HP 정보  0 ~ MaxHp 사이 값을 넘어 갈 수 없도록 설정
     public float HP
@@ -44,6 +45,8 @@ public abstract class Entity_Enemy : MonoBehaviour
 
 
     public bool isRightFace;
+    public bool isFollow;
+    public int alertState; // 0: 몰?루 / 1: 경계상태 / 2: 전투상태
     public bool isGrounded;
     public bool isCombat;
     public bool isAggro;
