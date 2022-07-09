@@ -440,6 +440,9 @@ MonoBehaviour:
   isAir: 0
   jumpCounter: 0
   isGrounded: 0
+  isCombat: 0
+  engageCounter: 0
+  curruntEngegeTime: 0
   slide: {fileID: 0}
   sprite: {fileID: 0}
   rb2d: {fileID: 4676228002698192404}
@@ -464,7 +467,7 @@ MonoBehaviour:
   - {fileID: 3351612401927880263}
   - {fileID: 3067393530204724776}
   - {fileID: 1653935491952024083}
-  trail: {fileID: 0}
+  trail: {fileID: 138615513068405325}
 --- !u!114 &1056724681165638344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +564,7 @@ MonoBehaviour:
   weaponLeft: {fileID: 0}
   weponlist:
   - {fileID: 0}
-  thePlayer: {fileID: 0}
+  thePlayer: {fileID: 2711700032691759625}
   anim: {fileID: 2711700032691759629}
 --- !u!114 &138615513068405325
 MonoBehaviour:
